@@ -1,4 +1,6 @@
 anim/
+anim/*
 *.tex
 *.atlas
 *.zip
+anim/ghost_naruto_build.zip
