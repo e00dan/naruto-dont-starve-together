@@ -8,13 +8,12 @@ local assets =
 
 local prefabs =
 {
-    "shadowwaxwell",
-    "waxwell_book_fx",
+    "bunshin",
+    "waxwell_book_fx"
 }
 
 local function doeffects(inst, pos)
-    SpawnPrefab("statue_transition").Transform:SetPosition(pos:Get())
-    SpawnPrefab("statue_transition_2").Transform:SetPosition(pos:Get())
+    SpawnPrefab("maxwell_smoke").Transform:SetPosition(pos:Get()) -- or small_puff
 end
 
 local function canread(inst)
@@ -50,7 +49,7 @@ local function onread(inst, reader, ignorecosts)
     local radius = math.random(3, 6)
     local offset = FindWalkableOffset(pt, theta, radius, 12, true)
     if offset then
-        local image = SpawnPrefab("shadowwaxwell")
+        local image = SpawnPrefab("bunshin")
         local pos = pt + offset
         image.Transform:SetPosition(pos:Get())
         doeffects(inst, pos)

@@ -1,6 +1,7 @@
 PrefabFiles = {
 	"naruto",
-	"bunshinjutsu"
+	"bunshinjutsu",
+	"bunshin"
 }
 
 Assets = {
@@ -23,8 +24,7 @@ Assets = {
     Asset( "ATLAS", "images/avatars/avatar_naruto.xml" ),
 	
 	Asset( "IMAGE", "images/avatars/avatar_ghost_naruto.tex" ),
-    Asset( "ATLAS", "images/avatars/avatar_ghost_naruto.xml" ),
-
+    Asset( "ATLAS", "images/avatars/avatar_ghost_naruto.xml" )
 }
 
 local require = GLOBAL.require

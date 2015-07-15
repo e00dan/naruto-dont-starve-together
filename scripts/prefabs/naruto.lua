@@ -32,7 +32,7 @@ local assets = {
         Asset( "ANIM", "anim/beard.zip" ),
 
         Asset( "ANIM", "anim/naruto.zip" ),
-        Asset( "ANIM", "anim/ghost_naruto_build.zip" ),
+        Asset( "ANIM", "anim/ghost_naruto_build.zip" )
 }
 local prefabs = {}
 
