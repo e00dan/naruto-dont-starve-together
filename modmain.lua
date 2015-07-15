@@ -33,8 +33,8 @@ local STRINGS = GLOBAL.STRINGS
 -- The character select screen lines
 STRINGS.CHARACTER_TITLES.naruto = "Naruto"
 STRINGS.CHARACTER_NAMES.naruto = "Naruto"
-STRINGS.CHARACTER_DESCRIPTIONS.naruto = "*Perk 1\n*Perk 2\n*Perk 3"
-STRINGS.CHARACTER_QUOTES.naruto = "\"Quote\""
+STRINGS.CHARACTER_DESCRIPTIONS.naruto = "*Bunshin no Jutsu\n*Likes Ramen[TODO]"
+STRINGS.CHARACTER_QUOTES.naruto = "\"One day I'll become Hokage!\""
 
 -- Custom speech strings
 STRINGS.CHARACTERS.NARUTO = require "speech_naruto"
@@ -46,12 +46,14 @@ STRINGS.NAMES.NARUTO = "Naruto"
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.NARUTO = 
 {
 	GENERIC = "It's Naruto!",
-	ATTACKER = "That Naruto looks shifty...",
+	ATTACKER = "Naruto looks shifty...",
 	MURDERER = "Murderer!",
 	REVIVER = "Naruto, friend of ghosts.",
-	GHOST = "Naruto could use a heart.",
+	GHOST = "Naruto could use a heart."
 }
 
+
+GLOBAL.CLONE_HEALTH_COST = GetModConfigData("clone_health_cost")
 
 AddMinimapAtlas("images/map_icons/naruto.xml")
 

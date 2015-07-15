@@ -16,22 +16,23 @@ local function doeffects(inst, pos)
     SpawnPrefab("maxwell_smoke").Transform:SetPosition(pos:Get()) -- or small_puff
 end
 
-local function canread(inst)
+local function canRead(inst)
     --return inst.components.sanity:GetMaxWithPenalty() >= TUNING.SHADOWWAXWELL_SANITY_PENALTY
-    return true
+    return inst.components.health.currenthealth >= CLONE_HEALTH_COST
 end
 
 local function onread(inst, reader, ignorecosts)
 
-    --[[Check sanity
-    if not ignorecosts and not canread(reader) then 
+    if not canRead(reader) then
         if reader.components.talker then
-            reader.components.talker:Say(GetString(reader, "ANNOUNCE_NOSANITY"))
+            reader.components.talker:Say("Can't... My chakra is too low...")
             return true
         end
+    else
+        reader.components.health:SetVal(reader.components.health.currenthealth - CLONE_HEALTH_COST, 'Bunshin no Jutsu', 'Naruto')
     end
 
-    --Check reagent
+    --[[Check reagent
     if not ignorecosts and not reader.components.inventory:Has("nightmarefuel", TUNING.SHADOWWAXWELL_FUEL_COST) then
         if reader.components.talker then
             reader.components.talker:Say(GetString(reader, "ANNOUNCE_NOFUEL"))
