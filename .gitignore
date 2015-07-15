@@ -4,5 +4,10 @@ anim/*
 *.atlas
 *.zip
 anim/ghost_naruto_build.zip
+<<<<<<< HEAD
 *.xml
+=======
+*.tex
+exported/naruto/face/Thumbs.db
+>>>>>>> origin/master
 *.db
