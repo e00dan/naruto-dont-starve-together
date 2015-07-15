@@ -1,5 +1,6 @@
 PrefabFiles = {
 	"naruto",
+	"bunshinjutsu"
 }
 
 Assets = {

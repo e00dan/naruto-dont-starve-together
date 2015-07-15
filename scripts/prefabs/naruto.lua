@@ -38,6 +38,7 @@ local prefabs = {}
 
 -- Custom starting items
 local start_inv = {
+    "bunshinjutsu"
 }
 
 -- When the character is revived from human
@@ -64,7 +65,9 @@ local common_postinit = function(inst)
 end
 
 -- This initializes for the server only. Components are added here.
-local master_postinit = function(inst)
+local function master_postinit(inst)
+    inst:AddComponent("reader")
+    
 	-- choose which sounds this character will play
 	inst.soundsname = "willow"
 	

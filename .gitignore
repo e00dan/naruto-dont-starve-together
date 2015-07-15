@@ -1,9 +1,6 @@
 anim/
 anim/*
 *.tex
-*.atlas
 *.zip
-anim/ghost_naruto_build.zip
-*.tex
-exported/naruto/face/Thumbs.db
+*.xml
 *.db
