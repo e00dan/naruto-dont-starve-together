@@ -4,3 +4,5 @@ anim/*
 *.zip
 *.xml
 *.db
+*.tmp
+*.psd
