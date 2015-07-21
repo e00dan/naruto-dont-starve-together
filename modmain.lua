@@ -33,7 +33,7 @@ local STRINGS = GLOBAL.STRINGS
 -- The character select screen lines
 STRINGS.CHARACTER_TITLES.naruto = "Naruto"
 STRINGS.CHARACTER_NAMES.naruto = "Naruto"
-STRINGS.CHARACTER_DESCRIPTIONS.naruto = "*Bunshin no Jutsu\n*Likes Ramen[TODO]"
+STRINGS.CHARACTER_DESCRIPTIONS.naruto = "*Kage Bunshin no Jutsu"
 STRINGS.CHARACTER_QUOTES.naruto = "\"One day I'll become Hokage!\""
 
 -- Custom speech strings
@@ -52,6 +52,8 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.NARUTO =
 	GHOST = "Naruto could use a heart."
 }
 
+STRINGS.NAMES.BUNSHINJUTSU = "Kage Bunshin no Jutsu"
+STRINGS.CHARACTERS.NARUTO.DESCRIBE.GERALT_SWORD = "Powerful Ninjutsu. Creates a clone, takes health for each copy."
 
 GLOBAL.CLONE_HEALTH_COST = GetModConfigData("clone_health_cost")
 
