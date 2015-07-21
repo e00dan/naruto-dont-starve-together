@@ -29,7 +29,7 @@ local events =
     CommonHandlers.OnLocomote(true, false),
     CommonHandlers.OnAttacked(),
     CommonHandlers.OnDeath(),
-    CommonHandlers.OnAttack(),
+    CommonHandlers.OnAttack()
 }
 
 local states =
@@ -180,9 +180,8 @@ local states =
             EventHandler("animover", function(inst)
                 inst:DoTaskInTime(1, function()
                     local x, y, z = inst.Transform:GetWorldPosition()
-                    SpawnPrefab("statue_transition").Transform:SetPosition(x, y, z)
-                    SpawnPrefab("statue_transition_2").Transform:SetPosition(x, y, z)
-                    inst.SoundEmitter:PlaySound("dontstarve/maxwell/shadowmax_despawn")
+                    SpawnPrefab("maxwell_smoke").Transform:SetPosition(x, y, z)
+                    --inst.SoundEmitter:PlaySound("dontstarve/maxwell/shadowmax_despawn")
                     inst:Remove()
                 end)
             end ),

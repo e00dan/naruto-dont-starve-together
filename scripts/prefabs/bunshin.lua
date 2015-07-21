@@ -4,7 +4,7 @@ local assets =
     Asset("SOUND", "sound/maxwell.fsb"),
     Asset("ANIM", "anim/swap_pickaxe.zip"),
     Asset("ANIM", "anim/swap_axe.zip"),
-    Asset("ANIM", "anim/swap_nightmaresword.zip")
+    Asset("ANIM", "anim/swap_spear.zip")
 }
 
 local brain = require "brains/bunshinbrain"
@@ -13,7 +13,7 @@ local items =
 {
     AXE = "swap_axe",
     PICK = "swap_pickaxe",
-    SWORD = "swap_nightmaresword"
+    SWORD = "swap_spear"
 }
 
 local function ondeath(inst)
@@ -128,7 +128,7 @@ local function fn()
     inst.components.combat:SetKeepTargetFunction(KeepTarget)
     inst.components.combat:SetAttackPeriod(TUNING.SHADOWWAXWELL_ATTACK_PERIOD)
     inst.components.combat:SetRange(2, 3)
-    inst.components.combat:SetDefaultDamage(TUNING.SHADOWWAXWELL_DAMAGE)
+    inst.components.combat:SetDefaultDamage(CLONE_DAMAGE)
 
     inst:AddComponent("health")
     inst.components.health:SetMaxHealth(CLONE_HEALTH)

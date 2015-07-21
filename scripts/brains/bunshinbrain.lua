@@ -5,7 +5,7 @@ require "behaviours/panic"
 require "behaviours/follow"
 require "behaviours/attackwall"
 
-local ShadowWaxwellBrain = Class(Brain, function(self, inst)
+local KageBunshinBrain = Class(Brain, function(self, inst)
     Brain._ctor(self, inst)
 end)
 
@@ -64,7 +64,7 @@ local function KeepFaceTargetFn(inst, target)
     return not target:HasTag("notarget") and inst:IsNear(target, KEEP_FACE_DIST)
 end
 
-function ShadowWaxwellBrain:OnStart()
+function KageBunshinBrain:OnStart()
     local root = PriorityNode(
     {
         ChaseAndAttack(self.inst, 5),
@@ -91,4 +91,4 @@ function ShadowWaxwellBrain:OnStart()
     self.bt = BT(self.inst, root)
 end
 
-return ShadowWaxwellBrain
+return KageBunshinBrain

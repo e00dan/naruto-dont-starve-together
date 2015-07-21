@@ -68,5 +68,23 @@ configuration_options =
 			{ data = 100, description = "100" },
 			{ data = 110, description = "110" }
 		}, default = 100
+	},
+	{
+		name = "clone_damage",
+		label = "Clone damage",
+		options = {
+			{ data = 0, description = "0" },
+			{ data = 10, description = "10" },
+			{ data = 20, description = "20" },
+			{ data = 30, description = "30" },
+			{ data = 40, description = "40" },
+			{ data = 50, description = "50" },
+			{ data = 60, description = "60" },
+			{ data = 70, description = "70" },
+			{ data = 80, description = "80" },
+			{ data = 90, description = "90" },
+			{ data = 100, description = "100" },
+			{ data = 110, description = "110" }
+		}, default = 20
 	}
 }

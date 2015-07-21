@@ -57,6 +57,7 @@ STRINGS.CHARACTERS.NARUTO.DESCRIBE.GERALT_SWORD = "Powerful Ninjutsu. Creates a 
 
 GLOBAL.CLONE_HEALTH_COST 	= GetModConfigData("clone_health_cost")
 GLOBAL.CLONE_HEALTH 		= GetModConfigData("clone_health")
+GLOBAL.CLONE_DAMAGE 		= GetModConfigData("clone_damage")
 
 AddMinimapAtlas("images/map_icons/naruto.xml")
 

@@ -75,9 +75,9 @@ local function master_postinit(inst)
     --inst.talker_path_override = "dontstarve_DLC001/characters/"
 	
 	-- Stats	
-	inst.components.health:SetMaxHealth(150)
-	inst.components.hunger:SetMax(150)
-	inst.components.sanity:SetMax(200)
+	inst.components.health:SetMaxHealth(180)
+	inst.components.hunger:SetMax(120)
+	inst.components.sanity:SetMax(220)
 	
 	-- Damage multiplier (optional)
     inst.components.combat.damagemultiplier = 1

@@ -1,0 +1,1 @@
+Get-ChildItem $Path | Where{$_.Name -Match "/*/"} | echo
