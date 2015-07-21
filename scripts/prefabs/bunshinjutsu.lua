@@ -52,12 +52,12 @@ local function onread(inst, reader, ignorecosts)
         image.Transform:SetPosition(pos:Get())
         doeffects(inst, pos)
         image.components.follower:SetLeader(reader)
-        
+
         if reader.components.talker then
             reader.components.talker:Say('Kage Bunshin no Jutsu!')
         end
 
-        reader.components.health:DoDelta(-CLONE_HEALTH_COST, 'Bunshin no Jutsu', reader)
+        reader.components.health:DoDelta(-CLONE_HEALTH_COST, 'Kage Bunshin no Jutsu', reader)
         --if not ignorecosts then reader.components.health:DoDelta(-TUNING.SHADOWWAXWELL_HEALTH_COST) end
         --if not ignorecosts then reader.components.sanity:RecalculatePenalty() end
         inst.SoundEmitter:PlaySound("dontstarve/maxwell/shadowmax_appear")

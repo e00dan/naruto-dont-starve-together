@@ -131,7 +131,7 @@ local function fn()
     inst.components.combat:SetDefaultDamage(TUNING.SHADOWWAXWELL_DAMAGE)
 
     inst:AddComponent("health")
-    inst.components.health:SetMaxHealth(TUNING.SHADOWWAXWELL_LIFE)
+    inst.components.health:SetMaxHealth(CLONE_HEALTH)
     inst.components.health.nofadeout = true
     inst:ListenForEvent("death", ondeath)
 

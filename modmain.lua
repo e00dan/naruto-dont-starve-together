@@ -55,7 +55,8 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.NARUTO =
 STRINGS.NAMES.BUNSHINJUTSU = "Kage Bunshin no Jutsu"
 STRINGS.CHARACTERS.NARUTO.DESCRIBE.GERALT_SWORD = "Powerful Ninjutsu. Creates a clone, takes health for each copy."
 
-GLOBAL.CLONE_HEALTH_COST = GetModConfigData("clone_health_cost")
+GLOBAL.CLONE_HEALTH_COST 	= GetModConfigData("clone_health_cost")
+GLOBAL.CLONE_HEALTH 		= GetModConfigData("clone_health")
 
 AddMinimapAtlas("images/map_icons/naruto.xml")
 
