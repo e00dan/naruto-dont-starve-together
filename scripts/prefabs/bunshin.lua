@@ -4,7 +4,7 @@ local assets =
     Asset("SOUND", "sound/maxwell.fsb"),
     Asset("ANIM", "anim/swap_pickaxe.zip"),
     Asset("ANIM", "anim/swap_axe.zip"),
-    Asset("ANIM", "anim/swap_spear.zip")
+    Asset("ANIM", "anim/swap_kunai.zip")
 }
 
 local brain = require "brains/bunshinbrain"
@@ -13,7 +13,7 @@ local items =
 {
     AXE = "swap_axe",
     PICK = "swap_pickaxe",
-    SWORD = "swap_spear"
+    SWORD = "swap_kunai"
 }
 
 local function ondeath(inst)

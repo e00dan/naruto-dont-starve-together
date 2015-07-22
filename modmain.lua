@@ -1,7 +1,8 @@
 PrefabFiles = {
 	"naruto",
 	"bunshinjutsu",
-	"bunshin"
+	"bunshin",
+	"kunai"
 }
 
 Assets = {
@@ -24,7 +25,10 @@ Assets = {
     Asset( "ATLAS", "images/avatars/avatar_naruto.xml" ),
 	
 	Asset( "IMAGE", "images/avatars/avatar_ghost_naruto.tex" ),
-    Asset( "ATLAS", "images/avatars/avatar_ghost_naruto.xml" )
+    Asset( "ATLAS", "images/avatars/avatar_ghost_naruto.xml" ),
+
+    Asset("ATLAS", "images/inventoryimages/kunai.xml"),
+    Asset("IMAGE", "images/inventoryimages/kunai.tex"),
 }
 
 local require = GLOBAL.require
@@ -53,7 +57,11 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.NARUTO =
 }
 
 STRINGS.NAMES.BUNSHINJUTSU = "Kage Bunshin no Jutsu"
-STRINGS.CHARACTERS.NARUTO.DESCRIBE.GERALT_SWORD = "Powerful Ninjutsu. Creates a clone, takes health for each copy."
+STRINGS.CHARACTERS.NARUTO.DESCRIBE.BUNSHINJUTSU = "Powerful Ninjutsu. Creates a clone, takes health for each copy."
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.BUNSHINJUTSU = "Weird scroll."
+
+STRINGS.NAMES.KUNAI = "Kunai"
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.KUNAI = "Sharp ninja knife."
 
 GLOBAL.CLONE_HEALTH_COST 	= GetModConfigData("clone_health_cost")
 GLOBAL.CLONE_HEALTH 		= GetModConfigData("clone_health")

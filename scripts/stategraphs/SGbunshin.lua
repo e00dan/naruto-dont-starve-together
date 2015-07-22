@@ -129,7 +129,7 @@ local states =
             inst.components.combat:StartAttack()
             inst.Physics:Stop()
             inst.AnimState:PlayAnimation("atk")
-            inst.SoundEmitter:PlaySound("dontstarve/wilson/attack_nightsword")
+            --inst.SoundEmitter:PlaySound("dontstarve/wilson/attack_nightsword")
             
             if inst.components.combat.target then
                 if inst.components.combat.target and inst.components.combat.target:IsValid() then

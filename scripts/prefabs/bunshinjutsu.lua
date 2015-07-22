@@ -107,6 +107,14 @@ local function fn()
         return false
     end, true, false, true)
 
+    if not inst.components.characterspecific then
+        inst:AddComponent("characterspecific")
+    end
+ 
+    inst.components.characterspecific:SetOwner("naruto")
+    inst.components.characterspecific:SetStorable(true)
+    inst.components.characterspecific:SetComment("I don't know how to use it")
+
     return inst
 end
 

@@ -38,7 +38,8 @@ local prefabs = {}
 
 -- Custom starting items
 local start_inv = {
-    "bunshinjutsu"
+    "bunshinjutsu",
+    "kunai"
 }
 
 -- When the character is revived from human
