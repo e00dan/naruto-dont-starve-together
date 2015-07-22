@@ -17,7 +17,7 @@ end
 
 local function canRead(inst)
     --return inst.components.sanity:GetMaxWithPenalty() >= TUNING.SHADOWWAXWELL_SANITY_PENALTY
-    return inst.components.health.currenthealth >= CLONE_HEALTH_COST
+    return inst.components.health.currenthealth > CLONE_HEALTH_COST -- > instead of >= so player doesn't die
 end
 
 local function onread(inst, reader, ignorecosts)

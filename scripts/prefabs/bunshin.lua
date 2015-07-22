@@ -18,9 +18,8 @@ local items =
 
 local function ondeath(inst)
     --inst.components.sanityaura.penalty = 0
-    local player = GetPlayer()
-    if player then
-        player.components.sanity:RecalculatePenalty()
+    if ThePlayer then
+        ThePlayer.components.sanity:RecalculatePenalty()
     end
 end
 
@@ -105,8 +104,8 @@ local function fn()
     --inst.AnimState:Hide("hat")
     --inst.AnimState:Hide("hat_hair")
 
-    --inst:AddTag("scarytoprey")
-    --inst:AddTag("NOCLICK")
+    inst:AddTag("scarytoprey")
+    inst:AddTag("kage_bunshin")
 
     inst.entity:SetPristine()
 

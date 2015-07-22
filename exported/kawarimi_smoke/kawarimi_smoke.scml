@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="b5">
+	<folder id="0" name="kawarimi_smoke">
+		<file id="0" name="kawarimi_smoke/kawarimi_smoke-0.png" width="228" height="220" pivot_x="0.532015" pivot_y="-0.395109" />
+		<file id="1" name="kawarimi_smoke/kawarimi_smoke-1.png" width="268" height="304" pivot_x="0.572666" pivot_y="-0.199421" />
+		<file id="2" name="kawarimi_smoke/kawarimi_smoke-2.png" width="340" height="396" pivot_x="0.610734" pivot_y="-0.0833308" />
+		<file id="3" name="kawarimi_smoke/kawarimi_smoke-3.png" width="408" height="500" pivot_x="0.551469" pivot_y="0.023401" />
+		<file id="4" name="kawarimi_smoke/kawarimi_smoke-4.png" width="468" height="512" pivot_x="0.525693" pivot_y="0.010793" />
+		<file id="5" name="kawarimi_smoke/kawarimi_smoke-5.png" width="524" height="596" pivot_x="0.542795" pivot_y="0.11355" />
+		<file id="6" name="kawarimi_smoke/kawarimi_smoke-6.png" width="544" height="608" pivot_x="0.511028" pivot_y="0.103002" />
+		<file id="7" name="kawarimi_smoke/kawarimi_smoke-7.png" width="556" height="624" pivot_x="0.516231" pivot_y="0.078887" />
+		<file id="8" name="kawarimi_smoke/kawarimi_smoke-8.png" width="544" height="632" pivot_x="0.501148" pivot_y="0.0364328" />
+		<file id="9" name="kawarimi_smoke/kawarimi_smoke-9.png" width="536" height="648" pivot_x="0.489271" pivot_y="-0.000114205" />
+		<file id="10" name="kawarimi_smoke/kawarimi_smoke-10.png" width="524" height="648" pivot_x="0.487117" pivot_y="-0.032483" />
+		<file id="11" name="kawarimi_smoke/kawarimi_smoke-11.png" width="512" height="652" pivot_x="0.48496" pivot_y="-0.0518006" />
+		<file id="12" name="kawarimi_smoke/kawarimi_smoke-12.png" width="500" height="628" pivot_x="0.479399" pivot_y="-0.114807" />
+		<file id="13" name="kawarimi_smoke/kawarimi_smoke-13.png" width="428" height="608" pivot_x="0.53744" pivot_y="-0.160196" />
+		<file id="14" name="kawarimi_smoke/kawarimi_smoke-14.png" width="420" height="584" pivot_x="0.537677" pivot_y="-0.215794" />
+		<file id="15" name="kawarimi_smoke/kawarimi_smoke-15.png" width="264" height="516" pivot_x="0.355017" pivot_y="-0.335269" />
+		<file id="16" name="kawarimi_smoke/kawarimi_smoke-16.png" width="260" height="504" pivot_x="0.34144" pivot_y="-0.415524" />
+		<file id="17" name="kawarimi_smoke/kawarimi_smoke-17.png" width="40" height="52" pivot_x="-1.34312" pivot_y="-7.90238" />
+		<file id="18" name="kawarimi_smoke/kawarimi_smoke-18.png" width="28" height="24" pivot_x="-2.17857" pivot_y="-18.7447" />
+	</folder>
+	<entity id="0" name="small_puff">
+		<animation id="0" name="puff" length="934">
+			<mainline>
+				<key id="0" time="0">
+					<object_ref id="0" name="kawarimi_smoke" abs_x="0" abs_y="0" abs_pivot_x="0.532015" abs_pivot_y="-0.395109" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="1" />
+				</key>
+				<key id="1" time="34">
+					<object_ref id="0" name="kawarimi_smoke" abs_x="0" abs_y="0" abs_pivot_x="0.572666" abs_pivot_y="-0.199421" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="1" z_index="1" />
+				</key>
+				<key id="2" time="67">
+					<object_ref id="0" name="kawarimi_smoke" abs_x="0" abs_y="0" abs_pivot_x="0.610734" abs_pivot_y="-0.0833308" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="2" z_index="1" />
+				</key>
+				<key id="3" time="100">
+					<object_ref id="0" name="kawarimi_smoke" abs_x="0" abs_y="0" abs_pivot_x="0.551469" abs_pivot_y="0.023401" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="3" z_index="1" />
+				</key>
+				<key id="4" time="134">
+					<object_ref id="0" name="kawarimi_smoke" abs_x="0" abs_y="0" abs_pivot_x="0.525693" abs_pivot_y="0.010793" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="4" z_index="1" />
+				</key>
+				<key id="5" time="167">
+					<object_ref id="0" name="kawarimi_smoke" abs_x="0" abs_y="0" abs_pivot_x="0.542795" abs_pivot_y="0.11355" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="5" z_index="1" />
+				</key>
+				<key id="6" time="200">
+					<object_ref id="0" name="kawarimi_smoke" abs_x="0" abs_y="0" abs_pivot_x="0.511028" abs_pivot_y="0.103002" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="6" z_index="1" />
+				</key>
+				<key id="7" time="234">
+					<object_ref id="0" name="kawarimi_smoke" abs_x="0" abs_y="0" abs_pivot_x="0.516231" abs_pivot_y="0.078887" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="7" z_index="1" />
+				</key>
+				<key id="8" time="267">
+					<object_ref id="0" name="kawarimi_smoke" abs_x="0" abs_y="0" abs_pivot_x="0.501148" abs_pivot_y="0.0364328" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="8" z_index="1" />
+				</key>
+				<key id="9" time="300">
+					<object_ref id="0" name="kawarimi_smoke" abs_x="0" abs_y="0" abs_pivot_x="0.489271" abs_pivot_y="-0.000114205" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="9" z_index="1" />
+				</key>
+				<key id="10" time="334">
+					<object_ref id="0" name="kawarimi_smoke" abs_x="0" abs_y="0" abs_pivot_x="0.487117" abs_pivot_y="-0.032483" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="10" z_index="1" />
+				</key>
+				<key id="11" time="367">
+					<object_ref id="0" name="kawarimi_smoke" abs_x="0" abs_y="0" abs_pivot_x="0.487117" abs_pivot_y="-0.032483" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="11" z_index="1" />
+				</key>
+				<key id="12" time="400">
+					<object_ref id="0" name="kawarimi_smoke" abs_x="0" abs_y="0" abs_pivot_x="0.48496" abs_pivot_y="-0.0518006" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="12" z_index="1" />
+				</key>
+				<key id="13" time="434">
+					<object_ref id="0" name="kawarimi_smoke" abs_x="0" abs_y="0" abs_pivot_x="0.48496" abs_pivot_y="-0.0518006" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="13" z_index="1" />
+				</key>
+				<key id="14" time="467">
+					<object_ref id="0" name="kawarimi_smoke" abs_x="0" abs_y="0" abs_pivot_x="0.479399" abs_pivot_y="-0.114807" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="14" z_index="1" />
+				</key>
+				<key id="15" time="500">
+					<object_ref id="0" name="kawarimi_smoke" abs_x="0" abs_y="0" abs_pivot_x="0.479399" abs_pivot_y="-0.114807" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="15" z_index="1" />
+				</key>
+				<key id="16" time="534">
+					<object_ref id="0" name="kawarimi_smoke" abs_x="0" abs_y="0" abs_pivot_x="0.53744" abs_pivot_y="-0.160196" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="16" z_index="1" />
+				</key>
+				<key id="17" time="567">
+					<object_ref id="0" name="kawarimi_smoke" abs_x="0" abs_y="0" abs_pivot_x="0.53744" abs_pivot_y="-0.160196" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="17" z_index="1" />
+				</key>
+				<key id="18" time="600">
+					<object_ref id="0" name="kawarimi_smoke" abs_x="0" abs_y="0" abs_pivot_x="0.537677" abs_pivot_y="-0.215794" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="18" z_index="1" />
+				</key>
+				<key id="19" time="634">
+					<object_ref id="0" name="kawarimi_smoke" abs_x="0" abs_y="0" abs_pivot_x="0.537677" abs_pivot_y="-0.215794" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="19" z_index="1" />
+				</key>
+				<key id="20" time="667">
+					<object_ref id="0" name="kawarimi_smoke" abs_x="0" abs_y="0" abs_pivot_x="0.355017" abs_pivot_y="-0.335269" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="20" z_index="1" />
+				</key>
+				<key id="21" time="700">
+					<object_ref id="0" name="kawarimi_smoke" abs_x="0" abs_y="0" abs_pivot_x="0.355017" abs_pivot_y="-0.335269" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="21" z_index="1" />
+				</key>
+				<key id="22" time="734">
+					<object_ref id="0" name="kawarimi_smoke" abs_x="0" abs_y="0" abs_pivot_x="0.34144" abs_pivot_y="-0.415524" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="22" z_index="1" />
+				</key>
+				<key id="23" time="767">
+					<object_ref id="0" name="kawarimi_smoke" abs_x="0" abs_y="0" abs_pivot_x="0.34144" abs_pivot_y="-0.415524" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="23" z_index="1" />
+				</key>
+				<key id="24" time="800">
+					<object_ref id="0" name="kawarimi_smoke" abs_x="0" abs_y="0" abs_pivot_x="-1.34312" abs_pivot_y="-7.90238" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="24" z_index="1" />
+				</key>
+				<key id="25" time="834">
+					<object_ref id="0" name="kawarimi_smoke" abs_x="0" abs_y="0" abs_pivot_x="-1.34312" abs_pivot_y="-7.90238" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="25" z_index="1" />
+				</key>
+				<key id="26" time="867">
+					<object_ref id="0" name="kawarimi_smoke" abs_x="0" abs_y="0" abs_pivot_x="-2.17857" abs_pivot_y="-18.7447" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="26" z_index="1" />
+				</key>
+				<key id="27" time="900" />
+				<key id="28" time="934" />
+			</mainline>
+			<timeline id="0" name="kawarimi_smoke">
+				<key id="0" time="0" spin="1">
+					<object folder="0" file="0" x="10.65" y="-54.35" scale_x="0.559982" scale_y="0.559982" angle="0" />
+				</key>
+				<key id="1" time="34" spin="1">
+					<object folder="0" file="1" x="-1.399" y="-50.35" scale_x="0.559982" scale_y="0.559982" angle="0" />
+				</key>
+				<key id="2" time="67" spin="1">
+					<object folder="0" file="2" x="-1.399" y="-50.35" scale_x="0.559982" scale_y="0.559982" angle="0" />
+				</key>
+				<key id="3" time="100" spin="1">
+					<object folder="0" file="3" x="-1.399" y="-50.35" scale_x="0.559982" scale_y="0.559982" angle="0" />
+				</key>
+				<key id="4" time="134" spin="1">
+					<object folder="0" file="4" x="-1.399" y="-50.35" scale_x="0.559982" scale_y="0.559982" angle="0" />
+				</key>
+				<key id="5" time="167" spin="1">
+					<object folder="0" file="5" x="-1.399" y="-50.35" scale_x="0.559982" scale_y="0.559982" angle="0" />
+				</key>
+				<key id="6" time="200" spin="1">
+					<object folder="0" file="6" x="-1.399" y="-50.35" scale_x="0.559982" scale_y="0.559982" angle="0" />
+				</key>
+				<key id="7" time="234" spin="1">
+					<object folder="0" file="7" x="-1.399" y="-50.35" scale_x="0.559982" scale_y="0.559982" angle="0" />
+				</key>
+				<key id="8" time="267" spin="1">
+					<object folder="0" file="8" x="-1.399" y="-50.35" scale_x="0.559982" scale_y="0.559982" angle="0" />
+				</key>
+				<key id="9" time="300" spin="1">
+					<object folder="0" file="9" x="-1.399" y="-50.35" scale_x="0.559982" scale_y="0.559982" angle="0" />
+				</key>
+				<key id="10" time="334" spin="1">
+					<object folder="0" file="10" x="-1.399" y="-50.35" scale_x="0.559982" scale_y="0.559982" angle="0" />
+				</key>
+				<key id="11" time="367" spin="1">
+					<object folder="0" file="10" x="-1.399" y="-50.35" scale_x="0.559982" scale_y="0.559982" angle="0" />
+				</key>
+				<key id="12" time="400" spin="1">
+					<object folder="0" file="11" x="-1.399" y="-50.35" scale_x="0.559982" scale_y="0.559982" angle="0" />
+				</key>
+				<key id="13" time="434" spin="1">
+					<object folder="0" file="11" x="-1.399" y="-50.35" scale_x="0.559982" scale_y="0.559982" angle="0" />
+				</key>
+				<key id="14" time="467" spin="1">
+					<object folder="0" file="12" x="-1.399" y="-50.35" scale_x="0.559982" scale_y="0.559982" angle="0" />
+				</key>
+				<key id="15" time="500" spin="1">
+					<object folder="0" file="12" x="-1.399" y="-50.35" scale_x="0.559982" scale_y="0.559982" angle="0" />
+				</key>
+				<key id="16" time="534" spin="1">
+					<object folder="0" file="13" x="-1.399" y="-50.35" scale_x="0.559982" scale_y="0.559982" angle="0" />
+				</key>
+				<key id="17" time="567" spin="1">
+					<object folder="0" file="13" x="-1.399" y="-50.35" scale_x="0.559982" scale_y="0.559982" angle="0" />
+				</key>
+				<key id="18" time="600" spin="1">
+					<object folder="0" file="14" x="-1.399" y="-50.35" scale_x="0.559982" scale_y="0.559982" angle="0" />
+				</key>
+				<key id="19" time="634" spin="1">
+					<object folder="0" file="14" x="-1.399" y="-50.35" scale_x="0.559982" scale_y="0.559982" angle="0" />
+				</key>
+				<key id="20" time="667" spin="1">
+					<object folder="0" file="15" x="-1.399" y="-50.35" scale_x="0.559982" scale_y="0.559982" angle="0" />
+				</key>
+				<key id="21" time="700" spin="1">
+					<object folder="0" file="15" x="-1.399" y="-50.35" scale_x="0.559982" scale_y="0.559982" angle="0" />
+				</key>
+				<key id="22" time="734" spin="1">
+					<object folder="0" file="16" x="-1.399" y="-50.35" scale_x="0.559982" scale_y="0.559982" angle="0" />
+				</key>
+				<key id="23" time="767" spin="1">
+					<object folder="0" file="16" x="-1.399" y="-50.35" scale_x="0.559982" scale_y="0.559982" angle="0" />
+				</key>
+				<key id="24" time="800" spin="1">
+					<object folder="0" file="17" x="-1.399" y="-50.35" scale_x="0.559982" scale_y="0.559982" angle="0" />
+				</key>
+				<key id="25" time="834" spin="1">
+					<object folder="0" file="17" x="-1.399" y="-50.35" scale_x="0.559982" scale_y="0.559982" angle="0" />
+				</key>
+				<key id="26" time="867" spin="1">
+					<object folder="0" file="18" x="-1.399" y="-50.35" scale_x="0.559982" scale_y="0.559982" angle="0" />
+				</key>
+			</timeline>
+		</animation>
+	</entity>
+</spriter_data>

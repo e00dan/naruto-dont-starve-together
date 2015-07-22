@@ -64,6 +64,27 @@ local common_postinit = function(inst)
 	inst.MiniMapEntity:SetIcon( "naruto.tex" )
 end
 
+local onremove = function(inst, data)
+    for k,v in pairs(inst.components.leader.followers) do
+        if k:HasTag('kage_bunshin') then
+            reader.components.talker:Say('Kage Bunshin should dispose now!')
+            k.components.health:Kill()
+            --self:RemoveFollower(k)
+        end
+    end
+end
+
+local playerdeactivated = function(inst)
+    for k,v in pairs(inst.components.leader.followers) do
+        if k:HasTag('kage_bunshin') then
+            reader.components.talker:Say('Kage Bunshin should dispose now!')
+            k.components.health:Kill()
+            --self:RemoveFollower(k)
+        end
+    end
+    --inst.components.leader:RemoveFollowersByTag('kage_bunshin')
+end
+
 -- This initializes for the server only. Components are added here.
 local function master_postinit(inst)
     inst:AddComponent("reader")
@@ -87,6 +108,8 @@ local function master_postinit(inst)
 	
 	inst.OnLoad = onload
     inst.OnNewSpawn = onload
+    inst:ListenForEvent('onremove', onremove)
+    inst:ListenForEvent('playerdeactivated', playerdeactivated)
 end
 
 return MakePlayerCharacter("naruto", prefabs, assets, common_postinit, master_postinit, start_inv)
