@@ -37,7 +37,7 @@ local STRINGS = GLOBAL.STRINGS
 -- The character select screen lines
 STRINGS.CHARACTER_TITLES.naruto = "Naruto"
 STRINGS.CHARACTER_NAMES.naruto = "Naruto"
-STRINGS.CHARACTER_DESCRIPTIONS.naruto = "*Kage Bunshin no Jutsu"
+STRINGS.CHARACTER_DESCRIPTIONS.naruto = "*Kage Bunshin no Jutsu\n*Uses Kunai"
 STRINGS.CHARACTER_QUOTES.naruto = "\"One day I'll become Hokage!\""
 
 -- Custom speech strings
