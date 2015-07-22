@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="b5">
 	<folder id="0" name="kunai">
-		<file id="0" name="kunai/kunai-0.png" width="256" height="512" pivot_x="0.471964" pivot_y="0.334553" />
+		<file id="0" name="kunai/kunai-0.png" width="44" height="150" pivot_x="0.471964" pivot_y="0.334553" />
 	</folder>
 	<entity id="0" name="swap_kunai">
 		<animation id="0" name="BUILD" length="1000">
