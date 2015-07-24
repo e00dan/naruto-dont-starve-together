@@ -62,7 +62,9 @@ end
 -- This initializes for both the server and client. Tags can be added here.
 local common_postinit = function(inst) 
 	-- Minimap icon
-	inst.MiniMapEntity:SetIcon( "naruto.tex" )
+	inst.MiniMapEntity:SetIcon("naruto.tex")
+
+    inst:AddTag('ninja')
 end
 
 local onremove = function(inst, data)

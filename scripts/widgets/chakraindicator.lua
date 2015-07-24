@@ -15,6 +15,11 @@ local ChakraIndicator = Class(Widget, function(self)
     self.icon = self.root:AddChild(Widget("target"))
     self.icon:SetScale(1)
 	self.badge = self.icon:AddChild(ChakraBadge())
+
+	if not ThePlayer:HasTag('ninja') then
+		self:Hide()
+		self.badge:Hide()
+	end
 end)
 
 return ChakraIndicator
