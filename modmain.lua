@@ -30,9 +30,6 @@ Assets = {
     Asset("ATLAS", "images/inventoryimages/kunai.xml"),
     Asset("IMAGE", "images/inventoryimages/kunai.tex"),
 
-    Asset( "IMAGE", "images/ui/status_bg.tex"),
-	Asset("ATLAS", "images/ui/status_bg.xml"),
-
 	Asset("ANIM", "anim/chakra.zip")
 }
 

@@ -111,6 +111,10 @@ local function master_postinit(inst)
     inst.OnNewSpawn = onload
     inst:ListenForEvent('onremove', onremove)
     inst:ListenForEvent('playerdeactivated', playerdeactivated)
+
+    inst:AddComponent('chakra')
+    inst.components.chakra:SetMaxChakra(100)
+    inst.components.chakra:StartRegen(1, 10)
 end
 
 return MakePlayerCharacter("naruto", prefabs, assets, common_postinit, master_postinit, start_inv)
