@@ -17,13 +17,6 @@ local items =
     SWORD = "swap_kunai"
 }
 
-local function ondeath(inst)
-    --inst.components.sanityaura.penalty = 0
-    if ThePlayer then
-        ThePlayer.components.sanity:RecalculatePenalty()
-    end
-end
-
 local function EquipItem(inst, item)
     if item then
         inst.AnimState:OverrideSymbol("swap_object", 'swap_kunai', 'kunai')
@@ -133,7 +126,6 @@ local function fn()
     inst:AddComponent("health")
     inst.components.health:SetMaxHealth(CLONE_HEALTH)
     inst.components.health.nofadeout = true
-    inst:ListenForEvent("death", ondeath)
 
     inst:AddComponent("inventory")
 
@@ -142,7 +134,7 @@ local function fn()
     inst.items = items
     inst.equipfn = EquipItem
 
-    inst.lifetime = TUNING.SHADOWWAXWELL_LIFETIME
+    inst.lifetime = 5 * 60 --5 minutes; TUNING.SHADOWWAXWELL_LIFETIME
     inst.death = inst:DoTaskInTime(inst.lifetime, die)
 
     inst.OnSave = onsave
