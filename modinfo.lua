@@ -2,7 +2,7 @@
 name = "Naruto"
 description = "One day I'll become Hokage!"
 author = "Kuzirashi & Shikate"
-version = "0.0.2" -- This is the version of the template. Change it to your own number.
+version = "0.0.3" -- This is the version of the template. Change it to your own number.
 
 -- This is the URL name of the mod's thread on the forum; the part after the ? and before the first & in the url
 forumthread = "http://kuzirashi.github.io"
@@ -35,7 +35,7 @@ configuration_options =
 {
 	{
 		name = "clone_health_cost",
-		label = "Clone health cost",
+		label = "Clone chakra cost",
 		options = {
 			{ data = 0, description = "0" },
 			{ data = 10, description = "10" },
