@@ -67,11 +67,8 @@ end
 
 function Chakra:DoRegen()
     --print(string.format("Chakra:DoRegen ^%.2g/%.2fs", self.regen.amount, self.regen.period))
-    if not self:IsDead() then
-        self:DoDelta(self.regen.amount, true, "regen")
-    else
-        --print("    can't regen from dead!")
-    end
+
+    self:DoDelta(self.regen.amount, true, "regen")
 end
 
 function Chakra:StartRegen(amount, period, interruptcurrentregen)

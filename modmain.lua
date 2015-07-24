@@ -116,7 +116,7 @@ local function AddChakraIndicator(self)
 	local screenwidth, screenheight = GLOBAL.TheSim:GetScreenSize()
 	centerx = screenwidth / 2
 	centery = screenheight / 2
-	controls.chakraindicator:SetPosition(screenwidth - 72, screenheight - 190, 0)
+	controls.chakraindicator:SetPosition(screenwidth - 72, screenheight - 191, 0)
 	controls.chakraindicator.inst.UITransform:SetScale(STARTSCALE, STARTSCALE, 1)
 	
 	-- Keyboard controls

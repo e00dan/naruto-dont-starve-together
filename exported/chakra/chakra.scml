@@ -16,28 +16,28 @@
 		<file id="0" name="bg2/bg2-0.png" width="64" height="64" pivot_x="-0.8625" pivot_y="1.88203" />
 	</folder>
 	<folder id="4" name="chakra_level">
-		<file id="0" name="chakra_level/chakra_level-0.png" width="68" height="68" pivot_x="0.500728" pivot_y="0.499272" />
-		<file id="1" name="chakra_level/chakra_level-1.png" width="68" height="64" pivot_x="0.500728" pivot_y="0.523836" />
-		<file id="2" name="chakra_level/chakra_level-2.png" width="68" height="60" pivot_x="0.500728" pivot_y="0.545425" />
-		<file id="3" name="chakra_level/chakra_level-3.png" width="68" height="60" pivot_x="0.500728" pivot_y="0.565425" />
-		<file id="4" name="chakra_level/chakra_level-4.png" width="68" height="56" pivot_x="0.500728" pivot_y="0.591527" />
-		<file id="5" name="chakra_level/chakra_level-5.png" width="68" height="56" pivot_x="0.500728" pivot_y="0.612955" />
-		<file id="6" name="chakra_level/chakra_level-6.png" width="68" height="52" pivot_x="0.500728" pivot_y="0.644721" />
-		<file id="7" name="chakra_level/chakra_level-7.png" width="68" height="48" pivot_x="0.500728" pivot_y="0.681781" />
-		<file id="8" name="chakra_level/chakra_level-8.png" width="68" height="48" pivot_x="0.500728" pivot_y="0.706781" />
-		<file id="9" name="chakra_level/chakra_level-9.png" width="68" height="44" pivot_x="0.500728" pivot_y="0.752852" />
-		<file id="10" name="chakra_level/chakra_level-10.png" width="68" height="44" pivot_x="0.500728" pivot_y="0.780125" />
-		<file id="11" name="chakra_level/chakra_level-11.png" width="68" height="40" pivot_x="0.500728" pivot_y="0.838138" />
-		<file id="12" name="chakra_level/chakra_level-12.png" width="68" height="36" pivot_x="0.500728" pivot_y="0.909028" />
-		<file id="13" name="chakra_level/chakra_level-13.png" width="68" height="36" pivot_x="0.500728" pivot_y="0.942361" />
-		<file id="14" name="chakra_level/chakra_level-14.png" width="64" height="32" pivot_x="0.500773" pivot_y="1.03516" />
-		<file id="15" name="chakra_level/chakra_level-15.png" width="64" height="32" pivot_x="0.500773" pivot_y="1.07266" />
-		<file id="16" name="chakra_level/chakra_level-16.png" width="60" height="28" pivot_x="0.500825" pivot_y="1.19732" />
-		<file id="17" name="chakra_level/chakra_level-17.png" width="60" height="24" pivot_x="0.501242" pivot_y="1.36354" />
-		<file id="18" name="chakra_level/chakra_level-18.png" width="56" height="24" pivot_x="0.500884" pivot_y="1.41354" />
-		<file id="19" name="chakra_level/chakra_level-19.png" width="52" height="20" pivot_x="0.501433" pivot_y="1.65625" />
-		<file id="20" name="chakra_level/chakra_level-20.png" width="44" height="20" pivot_x="0.501125" pivot_y="1.71625" />
-		<file id="21" name="chakra_level/chakra_level-21.png" width="40" height="16" pivot_x="0.501237" pivot_y="2.09531" />
+		<file id="0" name="chakra_level/chakra_level-0.png" width="68" height="68" pivot_x="0.5" pivot_y="0.5" />
+		<file id="1" name="chakra_level/chakra_level-1.png" width="68" height="68" pivot_x="0.5" pivot_y="0.5" />
+		<file id="2" name="chakra_level/chakra_level-2.png" width="68" height="68" pivot_x="0.5" pivot_y="0.5" />
+		<file id="3" name="chakra_level/chakra_level-3.png" width="68" height="68" pivot_x="0.5" pivot_y="0.5" />
+		<file id="4" name="chakra_level/chakra_level-4.png" width="68" height="68" pivot_x="0.5" pivot_y="0.5" />
+		<file id="5" name="chakra_level/chakra_level-5.png" width="68" height="68" pivot_x="0.5" pivot_y="0.5" />
+		<file id="6" name="chakra_level/chakra_level-6.png" width="68" height="68" pivot_x="0.5" pivot_y="0.5" />
+		<file id="7" name="chakra_level/chakra_level-7.png" width="68" height="68" pivot_x="0.5" pivot_y="0.5" />
+		<file id="8" name="chakra_level/chakra_level-8.png" width="68" height="68" pivot_x="0.5" pivot_y="0.5" />
+		<file id="9" name="chakra_level/chakra_level-9.png" width="68" height="68" pivot_x="0.5" pivot_y="0.5" />
+		<file id="10" name="chakra_level/chakra_level-10.png" width="68" height="68" pivot_x="0.5" pivot_y="0.5" />
+		<file id="11" name="chakra_level/chakra_level-11.png" width="68" height="68" pivot_x="0.5" pivot_y="0.5" />
+		<file id="12" name="chakra_level/chakra_level-12.png" width="68" height="68" pivot_x="0.5" pivot_y="0.5" />
+		<file id="13" name="chakra_level/chakra_level-13.png" width="68" height="68" pivot_x="0.5" pivot_y="0.5" />
+		<file id="14" name="chakra_level/chakra_level-14.png" width="68" height="68" pivot_x="0.5" pivot_y="0.5" />
+		<file id="15" name="chakra_level/chakra_level-15.png" width="68" height="68" pivot_x="0.5" pivot_y="0.5" />
+		<file id="16" name="chakra_level/chakra_level-16.png" width="68" height="68" pivot_x="0.5" pivot_y="0.5" />
+		<file id="17" name="chakra_level/chakra_level-17.png" width="68" height="68" pivot_x="0.5" pivot_y="0.5" />
+		<file id="18" name="chakra_level/chakra_level-18.png" width="68" height="68" pivot_x="0.5" pivot_y="0.5" />
+		<file id="19" name="chakra_level/chakra_level-19.png" width="68" height="68" pivot_x="0.5" pivot_y="0.5" />
+		<file id="20" name="chakra_level/chakra_level-20.png" width="68" height="68" pivot_x="0.5" pivot_y="0.5" />
+		<file id="21" name="chakra_level/chakra_level-21.png" width="68" height="68" pivot_x="0.5" pivot_y="0.5" />
 	</folder>
 	<entity id="0" name="chakra">
 		<animation id="0" name="anim" length="767">

@@ -5,7 +5,7 @@ local ChakraBadge = Class(Badge, function(self)
 	self.owner = ThePlayer
     Badge._ctor(self, "chakra", self.owner)
 
-    self:SetScale(1.5, 1.5, 1.5)
+    self:SetScale(1.25, 1.25, 1.25)
     --self:SetPercent(100, 100, 0)
 
     if self.owner.components.chakra then
