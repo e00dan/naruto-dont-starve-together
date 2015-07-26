@@ -25,33 +25,27 @@ local function onread(inst, reader, ignorecosts)
     if not canRead(reader) then
         if reader.components.talker then
             reader.components.talker:Say("Can't... My chakra is too low...")
-            return true
+            return false
         end
     end
 
-    --[[Check reagent
-    if not ignorecosts and not reader.components.inventory:Has("nightmarefuel", TUNING.SHADOWWAXWELL_FUEL_COST) then
-        if reader.components.talker then
-            reader.components.talker:Say(GetString(reader, "ANNOUNCE_NOFUEL"))
-            return true
-        end
-    end
-
-    if not ignorecosts then
-        reader.components.inventory:ConsumeByName("nightmarefuel", TUNING.SHADOWWAXWELL_FUEL_COST)
-    end]]
-
-    --Ok you had everything. Make the image.
     local theta = math.random() * 2 * PI
     local pt = inst:GetPosition()
     local radius = math.random(3, 6)
     local offset = FindWalkableOffset(pt, theta, radius, 12, true)
     if offset then
-        local image = SpawnPrefab("bunshin")
+        local bunshin = SpawnPrefab('bunshin')
         local pos = pt + offset
-        image.Transform:SetPosition(pos:Get())
+        bunshin.Transform:SetPosition(pos:Get())
         doeffects(inst, pos)
-        image.components.follower:SetLeader(reader)
+        bunshin.components.follower:SetLeader(reader)
+
+        local head_item = reader.components.inventory.equipslots['head']
+
+        if head_item and head_item.prefab == 'headband' then
+            local headband = SpawnPrefab('headband')
+            bunshin.components.inventory:Equip(SpawnPrefab('headband'))
+        end
 
         if reader.components.talker then
             reader.components.talker:Say('Kage Bunshin no Jutsu!')

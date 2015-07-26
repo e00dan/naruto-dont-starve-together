@@ -47,13 +47,23 @@ local function onbecamehuman(inst)
 	-- Set speed when loading or reviving from ghost (optional)
 	inst.components.locomotor.walkspeed = 4
 	inst.components.locomotor.runspeed = 6
+
+    CONTROLS.chakraindicator:Show()
+end
+
+
+local function OnBecameGhost(inst)
+    CONTROLS.chakraindicator:Hide()
 end
 
 -- When loading or spawning the character
 local function onload(inst)
     inst:ListenForEvent("ms_respawnedfromghost", onbecamehuman)
+    inst:ListenForEvent("ms_becameghost", OnBecameGhost)
 
-    if not inst:HasTag("playerghost") then
+    if inst:HasTag("playerghost") then
+        onbecameghost(inst)
+    else
         onbecamehuman(inst)
     end
 end
@@ -65,6 +75,8 @@ local common_postinit = function(inst)
 	inst.MiniMapEntity:SetIcon("naruto.tex")
 
     inst:AddTag('ninja')
+
+    inst:ListenForEvent("ms_playerleft", function(src, player) OnPlayerLeft(inst, player) end, TheWorld) -- http://forums.kleientertainment.com/topic/56400-player-logout-eventhook-name/#entry656494
 end
 
 local OnPlayerLeft = function(inst, player)
@@ -75,6 +87,16 @@ local OnPlayerLeft = function(inst, player)
             k.components.health:Kill()
             --self:RemoveFollower(k)
         end
+    end
+end
+
+local function OnChakraDelta(inst, data)
+    if data.amount == nil or data.amount >= 0 then return end
+
+    local times = data.amount / 10 -- result is always < 0
+
+    if times < 0 then
+        inst.components.hunger:DoDelta(times * 5)
     end
 end
 
@@ -101,11 +123,14 @@ local function master_postinit(inst)
 	
 	inst.OnLoad = onload
     inst.OnNewSpawn = onload
-    inst:ListenForEvent("ms_playerleft", function(src, player) OnPlayerLeft(inst, player) end, TheWorld) -- http://forums.kleientertainment.com/topic/56400-player-logout-eventhook-name/#entry656494
 
     inst:AddComponent('chakra')
     inst.components.chakra:SetMaxChakra(100)
     inst.components.chakra:StartRegen(1, 10)
+
+    inst.components.inventory:Equip(SpawnPrefab('headband'))
+
+    inst:ListenForEvent('chakradelta', OnChakraDelta)
 end
 
 return MakePlayerCharacter("naruto", prefabs, assets, common_postinit, master_postinit, start_inv)

@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="b5">
 	<folder id="0" name="swap_hat">
-		<file id="0" name="swap_hat/swap_headband-0.png" width="256" height="128" pivot_x="0.497947" pivot_y="-0.454484" />
-		<file id="1" name="swap_hat/swap_headband-1.png" width="224" height="164" pivot_x="0.602676" pivot_y="-0.215848" />
-		<file id="2" name="swap_hat/swap_headband-2.png" width="244" height="128" pivot_x="0.506043" pivot_y="-0.208195" />
-		<file id="3" name="swap_hat/swap_headband-3.png" width="280" height="136" pivot_x="0.501695" pivot_y="0.319305" />
+		<file id="0" name="swap_hat/swap_headband-0.png" width="300" height="300" pivot_x="0.5" pivot_y="0.2" />
+		<file id="1" name="swap_hat/swap_headband-1.png" width="300" height="300" pivot_x="0.5" pivot_y="0.2" />
+		<file id="2" name="swap_hat/swap_headband-2.png" width="300" height="300" pivot_x="0.5" pivot_y="0.2" />
+		<file id="3" name="swap_hat/swap_headband-3.png" width="212" height="144" pivot_x="0.5" pivot_y="0.2" />
 	</folder>
 	<entity id="0" name="headband">
 		<animation id="0" name="anim" length="67">
 			<mainline>
 				<key id="0" time="0">
-					<object_ref id="0" name="swap_hat" abs_x="0" abs_y="0" abs_pivot_x="0.501695" abs_pivot_y="0.319305" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="1" />
+					<object_ref id="0" name="swap_hat" abs_x="0" abs_y="0" abs_pivot_x="0.5" abs_pivot_y="0.5" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="1" />
 				</key>
 				<key id="1" time="34">
-					<object_ref id="0" name="swap_hat" abs_x="0" abs_y="0" abs_pivot_x="0.501695" abs_pivot_y="0.319305" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="1" z_index="1" />
+					<object_ref id="0" name="swap_hat" abs_x="0" abs_y="0" abs_pivot_x="0.5" abs_pivot_y="0.5" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="1" z_index="1" />
 				</key>
 				<key id="2" time="67">
-					<object_ref id="0" name="swap_hat" abs_x="0" abs_y="0" abs_pivot_x="0.501695" abs_pivot_y="0.319305" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="2" z_index="1" />
+					<object_ref id="0" name="swap_hat" abs_x="0" abs_y="0" abs_pivot_x="0.5" abs_pivot_y="0.5" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="2" z_index="1" />
 				</key>
 			</mainline>
 			<timeline id="0" name="swap_hat">

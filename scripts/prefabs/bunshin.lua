@@ -100,6 +100,7 @@ local function fn()
 
     inst:AddTag("scarytoprey")
     inst:AddTag("kage_bunshin")
+    inst:AddTag("ninja")
 
     inst.entity:SetPristine()
 

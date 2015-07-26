@@ -34,11 +34,17 @@ Assets = {
 	Asset("ANIM", "anim/chakra.zip"),
 
 	Asset("ATLAS", "images/inventoryimages/headband.xml"),
-    Asset("IMAGE", "images/inventoryimages/headband.tex")
+    Asset("IMAGE", "images/inventoryimages/headband.tex"),
+
+    Asset( "IMAGE", "images/recipe_tab/tab_ninja_gear.tex" ),
+	Asset( "ATLAS", "images/recipe_tab/tab_ninja_gear.xml" )
 }
 
-local require = GLOBAL.require
-local STRINGS = GLOBAL.STRINGS
+local require 		= GLOBAL.require
+local STRINGS 		= GLOBAL.STRINGS
+local Ingredient 	= GLOBAL.Ingredient
+local RECIPETABS 	= GLOBAL.RECIPETABS
+local TECH 			= GLOBAL.TECH
 
 -- The character select screen lines
 STRINGS.CHARACTER_TITLES.naruto = "Naruto"
@@ -68,9 +74,11 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.BUNSHINJUTSU = "Weird scroll."
 
 STRINGS.NAMES.KUNAI = "Kunai"
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.KUNAI = "Sharp ninja knife."
+STRINGS.RECIPE_DESC.KUNAI = "Sharp ninja knife."
 
 STRINGS.NAMES.HEADBAND = "Konoha's Ninja forehead protector"
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.KUNAI = "A symbol of pride and fealty for Konoha."
+STRINGS.RECIPE_DESC.HEADBAND = "A symbol of pride and fealty for Konoha."
 
 GLOBAL.CLONE_HEALTH_COST 	= GetModConfigData("clone_health_cost")
 GLOBAL.CLONE_HEALTH 		= GetModConfigData("clone_health")
@@ -83,7 +91,7 @@ AddModCharacter("naruto", "MALE")
 
 local ChakraBadge = GLOBAL.require("widgets/chakrabadge")
 
-local controls = nil
+GLOBAL.CONTROLS = nil
 
 local function AddChakraIndicator(self)
 	controls = self -- this just makes controls available in the rest of the modmain's functions
@@ -92,6 +100,24 @@ local function AddChakraIndicator(self)
 	controls.chakraindicator:SetPosition(0, -151, 0)
 
 	controls.chakraindicator:MoveToBack()
+
+	GLOBAL.CONTROLS = controls
 end
+
+
+RECIPETABS['NINJA_GEAR'] = { str = "NINJA_GEAR", sort=1000, icon = "tab_ninja_gear.tex", icon_atlas = "images/recipe_tab/tab_ninja_gear.xml" }
+STRINGS.TABS.NINJA_GEAR = "Ninja gear"
+
+local konoha_headband_recipe = AddRecipe("headband",
+	{
+		Ingredient("manrabbit_tail", 1), Ingredient("tentaclespots", 2), Ingredient("flint", 2)
+	},
+	RECIPETABS.NINJA_GEAR, TECH.NONE, nil, nil, nil, nil, 'ninja', "images/inventoryimages/headband.xml")
+
+local kunai_recipe = AddRecipe("kunai",
+	{
+		Ingredient("flint", 2)
+	},
+	RECIPETABS.NINJA_GEAR, TECH.NONE, nil, nil, nil, nil, 'ninja', "images/inventoryimages/kunai.xml")
 
 AddClassPostConstruct("widgets/controls", AddChakraIndicator)

@@ -49,7 +49,7 @@ local function fn(colour)
 	inst:AddComponent("inspectable")
 	
 	inst:AddComponent("weapon")
-    inst.components.weapon:SetDamage(20)
+    inst.components.weapon:SetDamage(25)
 	inst.components.weapon:SetRange(0.15, 0.15)
 	
 	inst:AddComponent("finiteuses")

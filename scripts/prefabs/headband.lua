@@ -17,9 +17,9 @@ local assets =
         owner.AnimState:Hide("HEAD")
         owner.AnimState:Show("HEAD_HAT")
     end
-    
-    if inst.components.fueled ~= nil then
-        inst.components.fueled:StartConsuming()
+
+    if inst.components.sanity ~= nil then
+        owner.components.sanity.rate_modifier = 0.5
     end
 end
 
@@ -35,8 +35,8 @@ local function OnUnequip(inst, owner)
         owner.AnimState:Hide("HEAD_HAT")
     end
 
-    if inst.components.fueled ~= nil then
-        inst.components.fueled:StopConsuming()
+    if inst.components.sanity ~= nil then
+        owner.components.sanity.rate_modifier = 1
     end
 end
 
@@ -53,7 +53,8 @@ local function fn(colour)
     inst.AnimState:SetBuild("headband")
     inst.AnimState:PlayAnimation("anim")
 
-    inst:AddTag("hat")
+    inst:AddTag('headband')
+    inst:AddTag('headband_konoha')
 	
 	inst.entity:SetPristine()
  
@@ -74,6 +75,24 @@ local function fn(colour)
 	
 	inst:AddComponent("inspectable")
 	
+    inst:AddComponent("armor")
+    inst.components.armor:InitCondition(1000, .15)
+
+    if not inst.components.characterspecific then
+        inst:AddComponent("characterspecific")
+        inst.components.characterspecific:SetOwner("naruto")
+        inst.components.characterspecific:SetStorable(false)
+    end
+
+    inst.components.inventoryitem.onputininventoryfn = function(inst, player)
+        if player.prefab ~= nil and not player:HasTag('ninja') then
+            inst:DoTaskInTime(0.1, function()
+                player.components.inventory:DropItem(inst)
+                player.components.talker:Say("I'm not a Ninja.")
+            end)
+        end
+    end
+
     return inst
 end
 
