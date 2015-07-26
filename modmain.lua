@@ -58,7 +58,7 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.NARUTO =
 	GHOST = "Naruto could use a heart."
 }
 
-STRINGS.NAMES.BUNSHINJUTSU = "Kage Bunshin no Jutsu"
+STRINGS.NAMES.BUNSHINJUTSU = "Scroll of the Forbidden Seal"
 STRINGS.CHARACTERS.NARUTO.DESCRIBE.BUNSHINJUTSU = "Powerful Ninjutsu. Creates a clone, takes health for each copy."
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.BUNSHINJUTSU = "Weird scroll."
 
