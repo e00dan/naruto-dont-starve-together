@@ -67,25 +67,15 @@ local common_postinit = function(inst)
     inst:AddTag('ninja')
 end
 
-local onremove = function(inst, data)
+local OnPlayerLeft = function(inst, player)
+    inst.components.talker:Say('OnPlayerLeft ms_playerleft')
     for k,v in pairs(inst.components.leader.followers) do
         if k:HasTag('kage_bunshin') then
-            reader.components.talker:Say('Kage Bunshin should dispose now!')
+            inst.components.talker:Say('Kage Bunshin should dispose now!')
             k.components.health:Kill()
             --self:RemoveFollower(k)
         end
     end
-end
-
-local playerdeactivated = function(inst)
-    for k,v in pairs(inst.components.leader.followers) do
-        if k:HasTag('kage_bunshin') then
-            reader.components.talker:Say('Kage Bunshin should dispose now!')
-            k.components.health:Kill()
-            --self:RemoveFollower(k)
-        end
-    end
-    --inst.components.leader:RemoveFollowersByTag('kage_bunshin')
 end
 
 -- This initializes for the server only. Components are added here.
@@ -111,8 +101,7 @@ local function master_postinit(inst)
 	
 	inst.OnLoad = onload
     inst.OnNewSpawn = onload
-    inst:ListenForEvent('onremove', onremove)
-    inst:ListenForEvent('playerdeactivated', playerdeactivated)
+    inst:ListenForEvent("ms_playerleft", function(src, player) OnPlayerLeft(inst, player) end, TheWorld) -- http://forums.kleientertainment.com/topic/56400-player-logout-eventhook-name/#entry656494
 
     inst:AddComponent('chakra')
     inst.components.chakra:SetMaxChakra(100)

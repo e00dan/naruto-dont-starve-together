@@ -5,8 +5,12 @@ local ChakraBadge = Class(Badge, function(self)
 	self.owner = ThePlayer
     Badge._ctor(self, "chakra", self.owner)
 
-    self:SetScale(1.25, 1.25, 1.25)
+    self:SetScale(1.35, 1.35, 1.35)
     --self:SetPercent(100, 100, 0)
+
+    if not self.owner:HasTag('ninja') then
+        self:Hide()
+    end
 
     if self.owner.components.chakra then
     	self.onchakradelta = function(owner, data) self:ChakraDelta(data) end
