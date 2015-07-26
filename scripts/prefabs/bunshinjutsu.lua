@@ -58,8 +58,6 @@ local function onread(inst, reader, ignorecosts)
         end
 
         reader.components.chakra:DoDelta(-CLONE_HEALTH_COST, 'Kage Bunshin no Jutsu', reader)
-        --if not ignorecosts then reader.components.health:DoDelta(-TUNING.SHADOWWAXWELL_HEALTH_COST) end
-        --if not ignorecosts then reader.components.sanity:RecalculatePenalty() end
         inst.SoundEmitter:PlaySound("dontstarve/maxwell/shadowmax_appear")
         return true
     end

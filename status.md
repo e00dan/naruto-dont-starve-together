@@ -9,5 +9,4 @@ Można też zrobić Drewno z eksplodującą notką z 1x Log i 1x Eksplodująca N
 Kunai z eksplodującą notką robi się z 1x kunai i 1x eksplodująca notka
 Kunaiem z eksplodującą notką można tylko rzucać, po rzuceniu tracimy kunai i notkę, wybuch jest dość silny
 Opaskę ninja można stworzyć z 1x Bunny Puff, 2x Tentacle Spots i 2x Flint
-Zwój Kage Bunshin no Jutsu to od teraz Scroll of the Forbidden Seal 
 Scroll of the Forbidden Seal można stworzyć z 2x Papyrus i 1x Nightmare Fuel

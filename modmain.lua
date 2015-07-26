@@ -2,7 +2,8 @@ PrefabFiles = {
 	"naruto",
 	"bunshinjutsu",
 	"bunshin",
-	"kunai"
+	"kunai",
+	'headband'
 }
 
 Assets = {
@@ -30,7 +31,10 @@ Assets = {
     Asset("ATLAS", "images/inventoryimages/kunai.xml"),
     Asset("IMAGE", "images/inventoryimages/kunai.tex"),
 
-	Asset("ANIM", "anim/chakra.zip")
+	Asset("ANIM", "anim/chakra.zip"),
+
+	Asset("ATLAS", "images/inventoryimages/headband.xml"),
+    Asset("IMAGE", "images/inventoryimages/headband.tex")
 }
 
 local require = GLOBAL.require
@@ -65,6 +69,9 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.BUNSHINJUTSU = "Weird scroll."
 STRINGS.NAMES.KUNAI = "Kunai"
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.KUNAI = "Sharp ninja knife."
 
+STRINGS.NAMES.HEADBAND = "Konoha's Ninja forehead protector"
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.KUNAI = "A symbol of pride and fealty for Konoha."
+
 GLOBAL.CLONE_HEALTH_COST 	= GetModConfigData("clone_health_cost")
 GLOBAL.CLONE_HEALTH 		= GetModConfigData("clone_health")
 GLOBAL.CLONE_DAMAGE 		= GetModConfigData("clone_damage")
@@ -82,43 +89,7 @@ local function AddChakraIndicator(self)
 	controls = self -- this just makes controls available in the rest of the modmain's functions
 
 	controls.chakraindicator = controls.sidepanel:AddChild(ChakraBadge())
-	--[[local screenwidth, screenheight = GLOBAL.TheSim:GetScreenSize()
-	centerx = screenwidth / 2
-	centery = screenheight / 2
-	controls.chakraindicator:SetPosition(screenwidth - 72, screenheight - 191, 0)]]
 	controls.chakraindicator:SetPosition(0, -151, 0)
-	--controls.chakraindicator.inst.UITransform:SetScale(STARTSCALE, STARTSCALE, 1)
-	
-	-- Keyboard controls
-	--GLOBAL.TheInput:AddKeyDownHandler(KEYBOARDTOGGLEKEY, ShowGestureWheel)
-	--GLOBAL.TheInput:AddKeyUpHandler(KEYBOARDTOGGLEKEY, HideGestureWheel)
-	
-	--SetModHUDFocus("ChakraIndicator", true)
-	
-	--if not IsDefaultScreen() then return end
-	
-	--[[if RESTORECURSOR then
-		cursorx, cursory = GLOBAL.TheInputProxy:GetOSCursorPos()
-	end
-	
-	if CENTERWHEEL then
-		GLOBAL.TheInputProxy:SetOSCursorPos(centerx, centery)
-	else
-		
-	end]]
-	--controls.chakraindicator:SetPosition(GLOBAL.TheInput:GetScreenPosition():Get())
-
-	--controls.chakraindicator:Show()
-	--controls.chakraindicator:ScaleTo(STARTSCALE, NORMSCALE, .25)
-	
-	--[[local OldOnUpdate = controls.OnUpdate
-	local function OnUpdate(...)
-		OldOnUpdate(...)
-		if keydown then
-			self.chakraindicator:OnUpdate()
-		end
-	end
-	controls.OnUpdate = OnUpdate]]
 
 	controls.chakraindicator:MoveToBack()
 end
