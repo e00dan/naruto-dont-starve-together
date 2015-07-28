@@ -63,12 +63,19 @@ STRINGS.CHARACTERS.GENERIC.DESCRIBE.NARUTO =
 	GHOST = "Naruto could use a heart."
 }
 
+RECIPETABS['NINJA_GEAR'] = { str = "NINJA_GEAR", sort = 1000, icon = "tab_ninja_gear.tex", icon_atlas = "images/recipe_tab/tab_ninja_gear.xml" }
+STRINGS.TABS.NINJA_GEAR = "Ninja gear"
+
 STRINGS.NAMES.BUNSHINJUTSU = "Scroll of the Forbidden Seal"
 STRINGS.CHARACTERS.NARUTO.DESCRIBE.BUNSHINJUTSU = "Powerful Ninjutsu. Creates a clone, takes health for each copy."
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.BUNSHINJUTSU = "Weird scroll."
 
-RECIPETABS['NINJA_GEAR'] = { str = "NINJA_GEAR", sort=1000, icon = "tab_ninja_gear.tex", icon_atlas = "images/recipe_tab/tab_ninja_gear.xml" }
-STRINGS.TABS.NINJA_GEAR = "Ninja gear"
+AddRecipe("bunshinjutsu",
+	{
+		Ingredient("papyrus", 2),
+		Ingredient('nightmarefuel', 1)
+	},
+	RECIPETABS.NINJA_GEAR, TECH.NONE, nil, nil, nil, nil, 'ninja', "images/inventoryimages/bunshinjutsu.xml")
 
 STRINGS.NAMES.KUNAI = "Kunai"
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.KUNAI = "Sharp ninja knife."
@@ -80,10 +87,13 @@ AddRecipe("kunai",
 	},
 	RECIPETABS.NINJA_GEAR, TECH.NONE, nil, nil, nil, nil, 'ninja', "images/inventoryimages/kunai.xml")
 
-local headbands = {
+headbands = {
 	HEADBAND_BLUE = { name = 'Blue forehead protector' },
+	HEADBAND_BLUE_MISSING = { name = 'Blue forehead protector' },
+	HEADBAND_BLACK = { name = 'Black forehead protector' },
 	HEADBAND_BLACK_MISSING = { name = 'Black forehead protector' },
-	HEADBAND_RED = { name = 'Red forehead protector' }
+	HEADBAND_RED = { name = 'Red forehead protector' },
+	HEADBAND_RED_MISSING = { name = 'Red forehead protector' }
 }
 
 for k, v in pairs(headbands) do

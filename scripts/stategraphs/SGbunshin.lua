@@ -64,7 +64,7 @@ local states =
         timeline=
         {        
             TimeEvent(4*FRAMES, function(inst)
-                inst.SoundEmitter:PlaySound("dontstarve/maxwell/shadowmax_step")
+                --inst.SoundEmitter:PlaySound("dontstarve/maxwell/shadowmax_step")
             end),
         },        
         
@@ -89,10 +89,10 @@ local states =
         timeline=
         {
             TimeEvent(7 * FRAMES, function(inst)
-                inst.SoundEmitter:PlaySound("dontstarve/maxwell/shadowmax_step")
+                --inst.SoundEmitter:PlaySound("dontstarve/maxwell/shadowmax_step")
             end),
             TimeEvent(15 * FRAMES, function(inst)
-                inst.SoundEmitter:PlaySound("dontstarve/maxwell/shadowmax_step")
+                --inst.SoundEmitter:PlaySound("dontstarve/maxwell/shadowmax_step")
             end),
         },
         
@@ -141,7 +141,10 @@ local states =
         
         timeline=
         {
-            TimeEvent(8*FRAMES, function(inst) inst.components.combat:DoAttack(inst.sg.statemem.target) inst.sg:RemoveStateTag("abouttoattack") end),
+            TimeEvent(8*FRAMES, function(inst)
+                inst.components.combat:DoAttack(inst.sg.statemem.target)
+                inst.sg:RemoveStateTag("abouttoattack")
+            end),
             TimeEvent(12*FRAMES, function(inst) 
                 inst.sg:RemoveStateTag("busy")
             end),               

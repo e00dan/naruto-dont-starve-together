@@ -100,17 +100,20 @@ local function MakeHeadband(name)
     local fn = nil
     local prefabs = nil
 
-    if name == "headband_blue" then
+    --[[if name == "headband_blue" then
         fn = basic
     elseif name == "headband_black_missing" then
         fn = basic
     elseif name == 'headband_red' then
         fn = basic
-    end
+    end]]
 
-    return Prefab("common/inventory/" .. name, fn, assets, prefabs)
+    return Prefab("common/inventory/" .. name, basic, assets, prefabs)
 end
 
 return MakeHeadband('headband_blue'),
+       MakeHeadband('headband_blue_missing'),
+       MakeHeadband('headband_black'),
        MakeHeadband('headband_black_missing'),
-       MakeHeadband('headband_red')
+       MakeHeadband('headband_red'),
+       MakeHeadband('headband_red_missing')
