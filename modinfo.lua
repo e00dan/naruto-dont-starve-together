@@ -86,5 +86,71 @@ configuration_options =
 			{ data = 100, description = "100" },
 			{ data = 110, description = "110" }
 		}, default = 20
+	},
+	{
+		name = "SMALL_MISS_CHANCE",
+		label = "Kunai Miss Small Creatures",
+		options =	{
+						{description = "100%", data = 2},
+						{description = "90%", data = 0.9},
+						{description = "80%", data = 0.8},
+						{description = "70%", data = 0.7},
+						{description = "60%", data = 0.6},
+						{description = "50%", data = 0.5},
+						{description = "40%", data = 0.4},
+						{description = "30%", data = 0.3},
+						{description = "20%", data = 0.2},
+						{description = "10%", data = 0.1},
+						{description = "0%", data = 0},
+					},
+
+		default = 2
+	
+	},
+	{
+		name = "LARGE_USES",
+		label = "Kunai # Uses on Large",
+		options =	{
+						{description = "2", data = 2},
+						{description = "3", data = 3},
+						{description = "5", data = 5},
+						{description = "10", data = 10},
+						{description = "15", data = 15},
+						{description = "25", data = 25},
+						{description = "30", data = 30},
+						{description = "50", data = 50},
+						{description = "75", data = 75},
+						{description = "150", data = 150},
+					},
+
+		default = 75
+	},
+	{
+		name = "SMALL_USES",
+		label = "Kunai # Uses on Small",
+		options =	{
+						{description = "2", data = 2},
+						{description = "3", data = 3},
+						{description = "5", data = 5},
+						{description = "10", data = 10},
+						{description = "15", data = 15},
+						{description = "25", data = 25},
+						{description = "30", data = 30},
+						{description = "50", data = 50},
+						{description = "75", data = 75},
+						{description = "150", data = 150},
+					},
+
+		default = 5
+	},
+	{
+		name = "RANGE_CHECK",
+		label = "Kunai Check Range",
+		options =	{
+						{description = "yes", data = true},
+						{description = "no", data = false},
+					},
+
+		default = true
 	}
 }

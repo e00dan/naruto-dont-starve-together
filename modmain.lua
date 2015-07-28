@@ -3,6 +3,7 @@ PrefabFiles = {
 	"bunshinjutsu",
 	"bunshin",
 	"kunai",
+	'kunai_projectile',
 	'headband'
 }
 
@@ -37,7 +38,9 @@ Assets = {
     Asset("IMAGE", "images/inventoryimages/headband.tex"),
 
     Asset( "IMAGE", "images/recipe_tab/tab_ninja_gear.tex" ),
-	Asset( "ATLAS", "images/recipe_tab/tab_ninja_gear.xml" )
+	Asset( "ATLAS", "images/recipe_tab/tab_ninja_gear.xml" ),
+
+	Asset("ANIM", "anim/kunai_projectile.zip")
 }
 
 local require 		= GLOBAL.require
@@ -121,3 +124,220 @@ local kunai_recipe = AddRecipe("kunai",
 	RECIPETABS.NINJA_GEAR, TECH.NONE, nil, nil, nil, nil, 'ninja', "images/inventoryimages/kunai.xml")
 
 AddClassPostConstruct("widgets/controls", AddChakraIndicator)
+
+
+--- Kunai
+
+GLOBAL.SMALL_MISS_CHANCE = GetModConfigData("SMALL_MISS_CHANCE")
+GLOBAL.SMALL_USES = GetModConfigData("SMALL_USES")
+GLOBAL.LARGE_USES = GetModConfigData("LARGE_USES")
+GLOBAL.RANGE_CHECK = GetModConfigData("RANGE_CHECK")
+
+local KUNAITHROW = GLOBAL.Action(4,		-- priority
+								false,	-- instant (set to not instant)
+								true,	-- right mouse button
+								10,		-- distance check
+								false,	-- ghost valid (set to not ghost valid)
+								false,	-- can force (false)
+								nil)	-- range check function
+KUNAITHROW.str = "Throw kunai"
+KUNAITHROW.id = "KUNAITHROW"
+KUNAITHROW.fn = function(act)
+	if act.invobject then
+		local pvp = GLOBAL.TheNet:GetPVPEnabled()
+		local target = act.target
+		if target == nil then
+			for k,v in pairs(GLOBAL.TheSim:FindEntities(act.pos.x, act.pos.y, act.pos.z, 20)) do
+				if v.replica and v.replica.combat and v.replica.combat:CanBeAttacked(act.doer) and
+				act.doer.replica and act.doer.replica.combat and act.doer.replica.combat:CanTarget(v)
+				and (not v:HasTag("wall")) and (pvp or ((not pvp)
+						and (not (act.doer:HasTag("player") and v:HasTag("player"))))) then
+					target = v
+					break
+				end
+			end
+		end
+		if target then
+			-- table.insert(actions, GLOBAL.ACTIONS.KUNAITHROW)
+			-- if (not act.doer.components.combat.laststartattacktime) or
+					-- (GLOBAL.GetTime() - act.doer.components.combat.laststartattacktime > 1) then
+				local prefab = act.invobject.prefab
+				act.invobject.components.kunaithrowable:LaunchProjectile(act.doer, target)
+				local newkunai = act.doer.components.inventory:FindItem(
+					function(item) return item.prefab == prefab end)
+				if newkunai then
+					act.doer.components.inventory:Equip(newkunai)
+				end
+			-- end
+		elseif act.doer.components and act.doer.components.talker then
+			local fail_message = "There's nothing to throw it at."
+			if act.doer.prefab == 'wx78' then fail_message = "NO TARGET" end
+			act.doer.components.talker:Say(fail_message)
+		end
+		return true
+	end
+end
+AddAction(KUNAITHROW)
+
+local State = GLOBAL.State
+local TimeEvent = GLOBAL.TimeEvent
+local EventHandler = GLOBAL.EventHandler
+local FRAMES = GLOBAL.FRAMES
+
+local throw_kunai = State({
+        name = "throw_kunai",
+        tags = { "attack", "notalking", "abouttoattack", "autopredict" },
+
+        onenter = function(inst)
+            local buffaction = inst:GetBufferedAction()
+            local target = buffaction ~= nil and buffaction.target or nil
+			inst.components.combat:SetTarget(target)
+			inst.components.combat:StartAttack()
+            inst.components.locomotor:Stop()
+
+            inst.AnimState:PlayAnimation("throw")
+
+            inst.sg:SetTimeout(2)
+
+            if target ~= nil and target:IsValid() then
+                inst:FacePoint(target.Transform:GetWorldPosition())
+                inst.sg.statemem.attacktarget = target
+			elseif buffaction ~= nil and buffaction.pos ~= nil then
+                inst:FacePoint(buffaction.pos)
+            end
+        end,
+
+        timeline =
+        {
+            TimeEvent(7 * FRAMES, function(inst)
+                inst:PerformBufferedAction()
+                inst.sg:RemoveStateTag("abouttoattack")
+            end),
+        },
+
+        ontimeout = function(inst)
+            inst.sg:RemoveStateTag("attack")
+            inst.sg:AddStateTag("idle")
+			-- inst:PerformBufferedAction()
+        end,
+
+        events =
+        {
+            EventHandler("animqueueover", function(inst)
+                if inst.AnimState:AnimDone() then
+                    inst.sg:GoToState("idle")
+                end
+            end),
+        },
+
+        onexit = function(inst)
+            inst.components.combat:SetTarget(nil)
+            if inst.sg:HasStateTag("abouttoattack") then
+                inst.components.combat:CancelAttack()
+            end
+        end,})
+AddStategraphState("wilson", throw_kunai)
+
+local throw_kunai_client = State({
+        name = "throw_kunai",
+        tags = { "attack", "notalking", "abouttoattack" },
+
+        onenter = function(inst)
+            local buffaction = inst:GetBufferedAction()
+            local target = buffaction ~= nil and buffaction.target or nil
+			inst.replica.combat:StartAttack()
+            inst.components.locomotor:Stop()
+
+            inst.AnimState:PlayAnimation("throw")
+
+            inst.sg:SetTimeout(2)
+
+            if target ~= nil and target:IsValid() then
+                inst:FacePoint(target.Transform:GetWorldPosition())
+                inst.sg.statemem.attacktarget = target
+			elseif buffaction ~= nil and buffaction.pos ~= nil then
+                inst:FacePoint(buffaction.pos)
+            end
+			if buffaction ~= nil then
+				inst:PerformPreviewBufferedAction()
+			end
+        end,
+
+        timeline =
+        {
+            TimeEvent(7 * FRAMES, function(inst)
+                inst:ClearBufferedAction()
+                inst.sg:RemoveStateTag("abouttoattack")
+            end),
+        },
+
+        ontimeout = function(inst)
+            inst.sg:RemoveStateTag("attack")
+            inst.sg:AddStateTag("idle")
+			-- inst:PerformBufferedAction()
+        end,
+
+        events =
+        {
+            EventHandler("animqueueover", function(inst)
+                if inst.AnimState:AnimDone() then
+                    inst.sg:GoToState("idle")
+                end
+            end),
+        },
+
+        onexit = function(inst)
+            if inst.sg:HasStateTag("abouttoattack") then
+                inst.replica.combat:CancelAttack()
+            end
+        end,})
+AddStategraphState("wilson_client", throw_kunai_client)
+
+AddStategraphActionHandler("wilson", GLOBAL.ActionHandler(KUNAITHROW, function(inst, action)
+	if not inst.sg:HasStateTag("attack") then
+		return "throw_kunai"
+	end
+end))
+AddStategraphActionHandler("wilson_client", GLOBAL.ActionHandler(KUNAITHROW, function(inst, action)
+	if not inst.sg:HasStateTag("attack") then
+		return "throw_kunai"
+	end
+end))
+
+local function kunaithrow_point(inst, doer, pos, actions, right)
+	if right then
+		local target = nil
+		local pvp = GLOBAL.TheNet:GetPVPEnabled()
+		local cur_time = GLOBAL.GetTime()
+		if RANGE_CHECK then
+			for k,v in pairs(GLOBAL.TheSim:FindEntities(pos.x, pos.y, pos.z, 2)) do
+				if v.replica and v.replica.combat and v.replica.combat:CanBeAttacked(doer) and
+				doer.replica and doer.replica.combat and doer.replica.combat:CanTarget(v)
+				and (not v:HasTag("wall")) and (pvp or ((not pvp)
+						and (not (doer:HasTag("player") and v:HasTag("player"))))) then
+					target = v
+					break
+				end
+			end
+		end
+		if target then
+			table.insert(actions, GLOBAL.ACTIONS.KUNAITHROW)
+		end
+	end
+end
+AddComponentAction("POINT", "kunaithrowable", kunaithrow_point)
+
+local function kunaithrow_target(inst, doer, target, actions, right)
+	local pvp = GLOBAL.TheNet:GetPVPEnabled()
+	local cur_time = GLOBAL.GetTime()
+	if right and (not target:HasTag("wall"))
+		and doer.replica.combat ~= nil
+		and doer.replica.combat:CanTarget(target)
+		and target.replica.combat:CanBeAttacked(doer)
+		and (pvp or ((not pvp)
+					and (not (doer:HasTag("player") and target:HasTag("player")))))
+			then
+		table.insert(actions, GLOBAL.ACTIONS.KUNAITHROW)
+	end
+end
+AddComponentAction("EQUIPPED", "kunaithrowable", kunaithrow_target)

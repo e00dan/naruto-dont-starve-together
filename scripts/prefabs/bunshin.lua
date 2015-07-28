@@ -129,6 +129,7 @@ local function fn()
     inst.components.health.nofadeout = true
 
     inst:AddComponent("inventory")
+    inst.components.inventory:DisableDropOnDeath()
 
     MakeHauntablePanic(inst)
 
