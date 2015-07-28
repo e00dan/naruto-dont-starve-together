@@ -4,7 +4,7 @@ PrefabFiles = {
 	"bunshin",
 	"kunai",
 	'kunai_projectile',
-	'headband'
+	'headbands'
 }
 
 Assets = {
@@ -29,18 +29,10 @@ Assets = {
 	Asset( "IMAGE", "images/avatars/avatar_ghost_naruto.tex" ),
     Asset( "ATLAS", "images/avatars/avatar_ghost_naruto.xml" ),
 
-    Asset("ATLAS", "images/inventoryimages/kunai.xml"),
-    Asset("IMAGE", "images/inventoryimages/kunai.tex"),
-
 	Asset("ANIM", "anim/chakra.zip"),
 
-	Asset("ATLAS", "images/inventoryimages/headband.xml"),
-    Asset("IMAGE", "images/inventoryimages/headband.tex"),
-
     Asset( "IMAGE", "images/recipe_tab/tab_ninja_gear.tex" ),
-	Asset( "ATLAS", "images/recipe_tab/tab_ninja_gear.xml" ),
-
-	Asset("ANIM", "anim/kunai_projectile.zip")
+	Asset( "ATLAS", "images/recipe_tab/tab_ninja_gear.xml" )
 }
 
 local require 		= GLOBAL.require
@@ -75,13 +67,38 @@ STRINGS.NAMES.BUNSHINJUTSU = "Scroll of the Forbidden Seal"
 STRINGS.CHARACTERS.NARUTO.DESCRIBE.BUNSHINJUTSU = "Powerful Ninjutsu. Creates a clone, takes health for each copy."
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.BUNSHINJUTSU = "Weird scroll."
 
+RECIPETABS['NINJA_GEAR'] = { str = "NINJA_GEAR", sort=1000, icon = "tab_ninja_gear.tex", icon_atlas = "images/recipe_tab/tab_ninja_gear.xml" }
+STRINGS.TABS.NINJA_GEAR = "Ninja gear"
+
 STRINGS.NAMES.KUNAI = "Kunai"
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.KUNAI = "Sharp ninja knife."
 STRINGS.RECIPE_DESC.KUNAI = "Sharp ninja knife."
 
-STRINGS.NAMES.HEADBAND = "Konoha's Ninja forehead protector"
-STRINGS.CHARACTERS.GENERIC.DESCRIBE.KUNAI = "A symbol of pride and fealty for Konoha."
-STRINGS.RECIPE_DESC.HEADBAND = "A symbol of pride and fealty for Konoha."
+AddRecipe("kunai",
+	{
+		Ingredient("flint", 2)
+	},
+	RECIPETABS.NINJA_GEAR, TECH.NONE, nil, nil, nil, nil, 'ninja', "images/inventoryimages/kunai.xml")
+
+local headbands = {
+	HEADBAND_BLUE = { name = 'Blue forehead protector' },
+	HEADBAND_BLACK_MISSING = { name = 'Black forehead protector' },
+	HEADBAND_RED = { name = 'Red forehead protector' }
+}
+
+for k, v in pairs(headbands) do
+	local lower = k:lower()
+
+	STRINGS.NAMES[k] = v.name or "Ninja forehead protector"
+	STRINGS.CHARACTERS.GENERIC.DESCRIBE[k] = v.description or "A symbol of pride and fealty."
+	STRINGS.RECIPE_DESC[k] = v.description or "A symbol of pride and fealty."
+
+	AddRecipe(lower,
+	{
+		Ingredient("manrabbit_tail", 1), Ingredient("tentaclespots", 2), Ingredient("flint", 2)
+	},
+	RECIPETABS.NINJA_GEAR, TECH.NONE, nil, nil, nil, nil, 'ninja', "images/inventoryimages/" .. lower .. ".xml")
+end
 
 GLOBAL.CLONE_HEALTH_COST 	= GetModConfigData("clone_health_cost")
 GLOBAL.CLONE_HEALTH 		= GetModConfigData("clone_health")
@@ -106,22 +123,6 @@ local function AddChakraIndicator(self)
 
 	GLOBAL.CONTROLS = controls
 end
-
-
-RECIPETABS['NINJA_GEAR'] = { str = "NINJA_GEAR", sort=1000, icon = "tab_ninja_gear.tex", icon_atlas = "images/recipe_tab/tab_ninja_gear.xml" }
-STRINGS.TABS.NINJA_GEAR = "Ninja gear"
-
-local konoha_headband_recipe = AddRecipe("headband",
-	{
-		Ingredient("manrabbit_tail", 1), Ingredient("tentaclespots", 2), Ingredient("flint", 2)
-	},
-	RECIPETABS.NINJA_GEAR, TECH.NONE, nil, nil, nil, nil, 'ninja', "images/inventoryimages/headband.xml")
-
-local kunai_recipe = AddRecipe("kunai",
-	{
-		Ingredient("flint", 2)
-	},
-	RECIPETABS.NINJA_GEAR, TECH.NONE, nil, nil, nil, nil, 'ninja', "images/inventoryimages/kunai.xml")
 
 AddClassPostConstruct("widgets/controls", AddChakraIndicator)
 

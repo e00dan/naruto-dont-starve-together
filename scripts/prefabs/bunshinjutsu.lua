@@ -42,9 +42,8 @@ local function onread(inst, reader, ignorecosts)
 
         local head_item = reader.components.inventory.equipslots['head']
 
-        if head_item and head_item.prefab == 'headband' then
-            local headband = SpawnPrefab('headband')
-            bunshin.components.inventory:Equip(SpawnPrefab('headband'))
+        if head_item then
+            bunshin.components.inventory:Equip(SpawnPrefab(head_item.prefab))
         end
 
         if reader.components.talker then

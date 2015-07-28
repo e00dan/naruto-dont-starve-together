@@ -48,12 +48,16 @@ local function onbecamehuman(inst)
 	inst.components.locomotor.walkspeed = 4
 	inst.components.locomotor.runspeed = 6
 
-    CONTROLS.chakraindicator:Show()
+    if CONTROLS then
+        CONTROLS.chakraindicator:Show()
+    end
 end
 
 
 local function OnBecameGhost(inst)
-    CONTROLS.chakraindicator:Hide()
+    if CONTROLS then
+        CONTROLS.chakraindicator:Hide()
+    end
 end
 
 -- When loading or spawning the character
@@ -62,7 +66,7 @@ local function onload(inst)
     inst:ListenForEvent("ms_becameghost", OnBecameGhost)
 
     if inst:HasTag("playerghost") then
-        onbecameghost(inst)
+        OnBecameGhost(inst)
     else
         onbecamehuman(inst)
     end
@@ -128,7 +132,7 @@ local function master_postinit(inst)
     inst.components.chakra:SetMaxChakra(100)
     inst.components.chakra:StartRegen(1, 10)
 
-    inst.components.inventory:Equip(SpawnPrefab('headband'))
+    inst.components.inventory:Equip(SpawnPrefab('headband_blue'))
 
     inst:ListenForEvent('chakradelta', OnChakraDelta)
 end

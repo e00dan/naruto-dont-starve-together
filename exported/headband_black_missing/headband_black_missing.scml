@@ -6,7 +6,7 @@
 		<file id="2" name="swap_hat/swap_headband-2.png" width="300" height="300" pivot_x="0.52" pivot_y="0.2" />
 		<file id="3" name="swap_hat/swap_headband-3.png" width="212" height="144" pivot_x="0.5" pivot_y="0.2" />
 	</folder>
-	<entity id="0" name="headband">
+	<entity id="0" name="headband_black_missing">
 		<animation id="0" name="anim" length="67">
 			<mainline>
 				<key id="0" time="0">
