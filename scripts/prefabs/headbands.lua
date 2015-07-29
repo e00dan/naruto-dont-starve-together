@@ -78,7 +78,7 @@ local function MakeHeadband(name)
         end
 
         inst.components.inventoryitem.onputininventoryfn = function(inst, player)
-            if player.prefab ~= nil and not player:HasTag('ninja') then
+            if player.prefab ~= nil and not player:HasTag('ninja') and player.components.inventory ~= nil then
                 inst:DoTaskInTime(0.1, function()
                     player.components.inventory:DropItem(inst)
                     player.components.talker:Say("I'm not a Ninja.")
