@@ -4,7 +4,8 @@ PrefabFiles = {
 	"bunshin",
 	"kunai",
 	'kunai_projectile',
-	'headbands'
+	'headbands',
+	'exploding_tag'
 }
 
 Assets = {
@@ -87,6 +88,17 @@ AddRecipe("kunai",
 	},
 	RECIPETABS.NINJA_GEAR, TECH.NONE, nil, nil, nil, nil, 'ninja', "images/inventoryimages/kunai.xml")
 
+STRINGS.NAMES.EXPLODING_TAG = "Exploding tag"
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.EXPLODING_TAG = "Exploding tag."
+STRINGS.RECIPE_DESC.EXPLODING_TAG = "Exploding tag."
+
+AddRecipe("exploding_tag",
+	{
+		Ingredient("papyrus", 1),
+		Ingredient("gunpowder", 1)
+	},
+	RECIPETABS.NINJA_GEAR, TECH.NONE, nil, nil, nil, nil, 'ninja', "images/inventoryimages/exploding_tag.xml")
+
 headbands = {
 	HEADBAND_BLUE = { name = 'Blue forehead protector' },
 	HEADBAND_BLUE_MISSING = { name = 'Blue forehead protector' },
@@ -130,6 +142,8 @@ local function AddChakraIndicator(self)
 	controls.chakraindicator:SetPosition(0, -151, 0)
 
 	controls.chakraindicator:MoveToBack()
+
+	controls.chakraindicator:SetClickable(false)
 
 	GLOBAL.CONTROLS = controls
 end

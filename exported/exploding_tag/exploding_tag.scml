@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="b5">
+    <folder id="0" name="/trap_01">
+        <file id="0" name="/trap_01/tag_idle.png" width="212" height="144" pivot_x="0" pivot_y="1"/>
+        <file id="1" name="/trap_01/tag_set.png" width="212" height="144" pivot_x="0" pivot_y="1"/>
+    </folder>
+    <entity id="0" name="exploding_tag">
+        <animation id="0" name="idle" length="1000">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" name="tag_set" folder="0" file="1" abs_x="2" abs_y="-2" abs_pivot_x="0.518779" abs_pivot_y="0.472414" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="tag_set">
+                <key id="0" spin="0">
+                    <object folder="0" file="1" x="2" y="-2" pivot_x="0.518779" pivot_y="0.472414"/>
+                </key>
+            </timeline>
+        </animation>
+        <animation id="1" name="anim" length="1000">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" name="tag_idle" folder="0" file="0" abs_x="1.99061" abs_y="-1.986207" abs_pivot_x="0.50939" abs_pivot_y="0.486207" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
+                </key>
+                <key id="1" time="406">
+                    <object_ref id="0" timeline="0" key="1" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="tag_idle">
+                <key id="0" spin="0">
+                    <object folder="0" file="0" x="1.99061" y="-1.986207" pivot_x="0.50939" pivot_y="0.486207"/>
+                </key>
+                <key id="1" time="406" spin="0">
+                    <object folder="0" file="0" x="2" y="-2" pivot_x="0.50939" pivot_y="0.486207"/>
+                </key>
+            </timeline>
+        </animation>
+        <animation id="2" name="inactive" length="1000">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" name="tag_idle_000" folder="0" file="0" abs_x="2" abs_y="-2" abs_pivot_x="0.495305" abs_pivot_y="0.534483" abs_angle="360" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="tag_idle_000">
+                <key id="0" spin="0">
+                    <object folder="0" file="0" x="2" y="-2" pivot_x="0.495305" pivot_y="0.534483"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+</spriter_data>

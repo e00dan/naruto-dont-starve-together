@@ -86,7 +86,7 @@ end
 
 
 -- This initializes for both the server and client. Tags can be added here.
-local common_postinit = function(inst) 
+local function common_postinit(inst) 
 	-- Minimap icon
 	inst.MiniMapEntity:SetIcon("naruto.tex")
 
@@ -95,8 +95,8 @@ local common_postinit = function(inst)
     inst:ListenForEvent("ms_playerleft", function(src, player) OnPlayerLeft(inst, player) end, TheWorld) -- http://forums.kleientertainment.com/topic/56400-player-logout-eventhook-name/#entry656494
 end
 
-local OnPlayerLeft = function(inst, player)
-    inst.components.talker:Say('OnPlayerLeft ms_playerleft')
+local function OnPlayerLeft(inst, player)
+    --inst.components.talker:Say('OnPlayerLeft ms_playerleft')
     for k,v in pairs(inst.components.leader.followers) do
         if k:HasTag('kage_bunshin') then
             inst.components.talker:Say('Kage Bunshin should dispose now!')
@@ -106,13 +106,36 @@ local OnPlayerLeft = function(inst, player)
     end
 end
 
-local function OnChakraDelta(inst, data)
+local function TakeHungerForChakra(inst, data)
+    if data == nil then return end
+
     if data.amount == nil or data.amount >= 0 then return end
 
     local times = data.amount / 10 -- result is always < 0
 
     if times < 0 then
         inst.components.hunger:DoDelta(times * 5)
+    end
+end
+
+local function OnChakraDelta(inst, data)
+    TakeHungerForChakra(inst, data)
+
+    local chakra = inst.components.chakra.currentchakra
+
+    if chakra == nil then return end
+
+    local hasTag        = inst:HasTag('double_sanity_loss')
+    local rateModifier  = inst.components.sanity.rate_modifier
+
+    if chakra < 20 and not hasTag then
+        inst.components.sanity.rate_modifier = rateModifier / 2
+
+        inst:AddTag('double_sanity_loss')
+    elseif chakra >= 20 and hasTag then
+        inst.components.sanity.rate_modifier = rateModifier * 2
+
+        inst:RemoveTag('double_sanity_loss')
     end
 end
 
