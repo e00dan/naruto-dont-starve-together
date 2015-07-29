@@ -60,8 +60,8 @@ local function OnBecameGhost(inst)
     end
 end
 
--- When loading or spawning the character
-local function onload(inst)
+-- When loading the character
+local function OnLoad(inst)
     inst:ListenForEvent("ms_respawnedfromghost", onbecamehuman)
     inst:ListenForEvent("ms_becameghost", OnBecameGhost)
 
@@ -69,6 +69,18 @@ local function onload(inst)
         OnBecameGhost(inst)
     else
         onbecamehuman(inst)
+    end
+end
+
+local function OnNewSpawn(inst)
+    OnLoad(inst)
+
+    if inst.components.inventory ~= nil then
+        inst.components.inventory.ignoresound = true
+        
+        inst.components.inventory:Equip(SpawnPrefab('headband_blue'))
+
+        inst.components.inventory.ignoresound = false
     end
 end
 
@@ -125,14 +137,12 @@ local function master_postinit(inst)
 	-- Hunger rate (optional)
 	inst.components.hunger.hungerrate = 1 * TUNING.WILSON_HUNGER_RATE
 	
-	inst.OnLoad = onload
-    inst.OnNewSpawn = onload
+	inst.OnLoad = OnLoad
+    inst.OnNewSpawn = OnNewSpawn
 
     inst:AddComponent('chakra')
     inst.components.chakra:SetMaxChakra(100)
     inst.components.chakra:StartRegen(1, 10)
-
-    inst.components.inventory:Equip(SpawnPrefab('headband_blue'))
 
     inst:ListenForEvent('chakradelta', OnChakraDelta)
 end
