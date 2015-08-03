@@ -92,12 +92,12 @@ STRINGS.NAMES.EXPLODING_TAG = "Exploding tag"
 STRINGS.CHARACTERS.GENERIC.DESCRIBE.EXPLODING_TAG = "Exploding tag."
 STRINGS.RECIPE_DESC.EXPLODING_TAG = "Exploding tag."
 
-AddRecipe("exploding_tag",
+--[[AddRecipe("exploding_tag",
 	{
 		Ingredient("papyrus", 1),
 		Ingredient("gunpowder", 1)
 	},
-	RECIPETABS.NINJA_GEAR, TECH.NONE, nil, nil, nil, nil, 'ninja', "images/inventoryimages/exploding_tag.xml")
+	RECIPETABS.NINJA_GEAR, TECH.NONE, nil, nil, nil, nil, 'ninja', "images/inventoryimages/exploding_tag.xml")]]
 
 headbands = {
 	HEADBAND_BLUE = { name = 'Blue forehead protector' },
