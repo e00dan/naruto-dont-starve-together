@@ -70,9 +70,7 @@ local function fn()
     inst.entity:AddSoundEmitter()
     inst.entity:AddNetwork()
 
-
-
-    MakeGhostPhysics(inst, 1, .5)
+    MakeCharacterPhysics(inst, 50, .5)
 
     inst.Transform:SetFourFaced(inst)
     
@@ -113,7 +111,6 @@ local function fn()
 
     inst:AddComponent("locomotor")
     inst.components.locomotor:SetSlowMultiplier( 0.6 )
-    inst.components.locomotor.pathcaps = { ignorecreep = true }
     inst.components.locomotor.runspeed = TUNING.SHADOWWAXWELL_SPEED
 
     inst:AddComponent("combat")

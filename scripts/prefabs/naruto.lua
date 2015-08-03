@@ -84,6 +84,20 @@ local function OnNewSpawn(inst)
     end
 end
 
+local function OnPlayerLeft(inst, player)
+    --player.components.talker:Say('OnPlayerLeft ms_playerleft')
+    if not player or not player.components or not player.components.leader then
+        return
+    end
+    
+    for k, v in pairs(player.components.leader.followers) do
+        if k:HasTag('kage_bunshin') then
+            player.components.talker:Say('Kage Bunshin should dispose now!')
+            k.components.health:Kill()
+            --self:RemoveFollower(k)
+        end
+    end
+end
 
 -- This initializes for both the server and client. Tags can be added here.
 local function common_postinit(inst) 
@@ -93,17 +107,6 @@ local function common_postinit(inst)
     inst:AddTag('ninja')
 
     inst:ListenForEvent("ms_playerleft", function(src, player) OnPlayerLeft(inst, player) end, TheWorld) -- http://forums.kleientertainment.com/topic/56400-player-logout-eventhook-name/#entry656494
-end
-
-local function OnPlayerLeft(inst, player)
-    --inst.components.talker:Say('OnPlayerLeft ms_playerleft')
-    for k,v in pairs(inst.components.leader.followers) do
-        if k:HasTag('kage_bunshin') then
-            inst.components.talker:Say('Kage Bunshin should dispose now!')
-            k.components.health:Kill()
-            --self:RemoveFollower(k)
-        end
-    end
 end
 
 local function TakeHungerForChakra(inst, data)
